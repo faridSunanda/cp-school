@@ -1,0 +1,452 @@
+<!DOCTYPE html>
+<html lang="id">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Kontak - SMPN 22 Kaur</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+    />
+    <style>
+      @import url("https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap");
+
+      body {
+        font-family: "Poppins", sans-serif;
+        scroll-behavior: smooth;
+      }
+      .header-sticky {
+        position: sticky;
+        top: 0;
+        z-index: 50;
+        transition: all 0.3s ease;
+      }
+
+      .hero-gradient {
+        background: linear-gradient(135deg, #1e3a8a 0%, #2563eb 100%);
+      }
+      .gradient-bg {
+        background: linear-gradient(135deg, #2563eb 0%, #1e40af 100%);
+      }
+
+      .menu-item:hover .menu-dropdown {
+        opacity: 1;
+        visibility: visible;
+        transform: translateY(0);
+      }
+      .hero-gradient {
+        background: linear-gradient(135deg, #3b82f6 0%, #1d4ed8 100%);
+      }
+      .contact-card {
+        transition: all 0.3s ease;
+      }
+      .contact-card:hover {
+        transform: translateY(-5px);
+        box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+      }
+    </style>
+  </head>
+  <body class="bg-gray-50">
+    <!-- Header -->
+    <header class="header-sticky bg-white shadow-md">
+      <div
+        class="container mx-auto px-4 py-3 flex justify-between items-center"
+      >
+        <div class="flex items-center space-x-3">
+          <div class="w-16 h-16 rounded-lg flex items-center justify-center">
+            <img
+              src="/image/logo.png"
+              alt="Logo SMP Negeri XX Kaur - Perisai dengan motif khas Bengkulu dan tulisan SMP Negeri XX Kaur"
+              class="w-12 h-12 object-contain"
+            />
+          </div>
+          <div>
+            <h1 class="font-bold text-xl text-gray-800">SMP Negeri XX Kaur</h1>
+            <p class="text-sm text-gray-600">Sekolah Unggulan Berkualitas</p>
+          </div>
+        </div>
+
+        <nav class="hidden md:block">
+          <ul class="flex space-x-6">
+            <li class="relative menu-item">
+              <a
+                href="/"
+                class="text-gray-800 hover:text-primary font-medium py-2"
+                >Beranda</a
+              >
+            </li>
+            <li class="relative menu-item">
+              <a
+                href="profil.html"
+                class="text-gray-800 hover:text-primary font-medium py-2"
+                >Profil <i class="fa-solid fa-angle-down text-sm"></i
+              ></a>
+              <div
+                class="menu-dropdown absolute left-0 mt-2 w-48 bg-white rounded-md shadow-lg opacity-0 invisible transform -translate-y-2 transition-all duration-300"
+              >
+                <div class="py-1">
+                  <a
+                    href="profil.html#visi-misi"
+                    class="block px-4 py-2 text-gray-700 hover:bg-gray-100"
+                    >Visi & Misi</a
+                  >
+                  <a
+                    href="profil.html#sejarah"
+                    class="block px-4 py-2 text-gray-700 hover:bg-gray-100"
+                    >Sejarah</a
+                  >
+                </div>
+              </div>
+            </li>
+            <li class="relative menu-item">
+              <a
+                href="staff.html"
+                class="text-gray-800 hover:text-primary font-medium py-2"
+                >Guru & Staff</a
+              >
+            </li>
+            <li class="relative menu-item">
+              <a
+                href="curriculum.html"
+                class="text-gray-800 hover:text-primary font-medium py-2"
+                >Kurikulum</a
+              >
+            </li>
+            <li class="relative menu-item">
+              <a
+                href="news.html"
+                class="text-gray-800 hover:text-primary font-medium py-2"
+                >Berita</a
+              >
+            </li>
+            <li class="relative menu-item">
+              <a
+                href="gallery.html"
+                class="text-gray-800 hover:text-primary font-medium py-2"
+                >Galeri</a
+              >
+            </li>
+            <li class="relative menu-item">
+              <a
+                href="ppdb.html"
+                class="text-gray-800 hover:text-primary font-medium py-2"
+                >PPDB</a
+              >
+            </li>
+            <li class="relative menu-item">
+              <a
+                href="contact.html"
+                class="text-gray-800 hover:text-primary font-medium py-2"
+                >Kontak</a
+              >
+            </li>
+          </ul>
+        </nav>
+
+        <button class="md:hidden text-gray-600">
+          <i class="fas fa-bars text-2xl"></i>
+        </button>
+      </div>
+    </header>
+
+    <!-- Mobile Menu -->
+    <div id="mobile-menu" class="md:hidden hidden bg-white shadow-lg">
+      <div class="container mx-auto px-4 py-3">
+        <ul class="space-y-3">
+          <li><a href="/" class="block py-2 text-gray-800">Beranda</a></li>
+          <li>
+            <a href="profil.html" class="block py-2 text-gray-800">Profil</a>
+          </li>
+          <li>
+            <a href="staff.html" class="block py-2 text-gray-800"
+              >Guru & Staff</a
+            >
+          </li>
+          <li>
+            <a href="curriculum.html" class="block py-2 text-gray-800"
+              >Kurikulum</a
+            >
+          </li>
+          <li>
+            <a href="news.html" class="block py-2 text-gray-800">Berita</a>
+          </li>
+          <li>
+            <a href="gallery.html" class="block py-2 text-gray-800">Galeri</a>
+          </li>
+          <li>
+            <a href="ppdb.html" class="block py-2 text-gray-800">PPDB</a>
+          </li>
+          <li>
+            <a href="contact.html" class="block py-2 text-gray-800">Kontak</a>
+          </li>
+        </ul>
+      </div>
+    </div>
+
+    <!-- Hero Section
+    <section
+      class="hero-gradient text-white py-20 lg:py-28 px-4 md:px-6 lg:px-8"
+    >
+      <div class="max-w-6xl mx-auto text-center">
+        <h1 class="text-4xl md:text-5xl lg:text-6xl font-bold mb-6">
+          Hubungi Kami
+        </h1>
+        <div class="w-24 h-1.5 bg-yellow-400 mx-auto mb-8"></div>
+        <p class="text-lg md:text-xl max-w-3xl mx-auto">
+          SMP Negeri XX Kaur siap melayani kebutuhan informasi Anda dengan
+            ramah dan profesional.
+        </p>
+      </div>
+    </section> -->
+
+    <!-- Breadcrumb -->
+    <div class="bg-gray-100 py-3 px-6">
+      <div class="max-w-6xl mx-auto flex items-center space-x-2 text-sm">
+        <a href="/" class="text-blue-600 hover:underline">Beranda</a>
+        <span>/</span>
+        <span class="text-gray-600">Kontak Sekolah</span>
+      </div>
+    </div>
+
+    <!-- Main Content -->
+    <div class="container mx-auto px-4 py-12 max-w-6xl">
+      <div class="grid grid-cols-1 lg:grid-cols-2 gap-12">
+        <!-- Contact Information -->
+        <div>
+          <div class="mb-8">
+            <h2 class="text-2xl font-bold text-gray-800 mb-6">
+              Informasi Kontak
+            </h2>
+
+            <!-- Contact Card -->
+            <div class="bg-white rounded-lg shadow-md p-6 contact-card mb-6">
+              <div class="flex items-start mb-4">
+                <div
+                  class="bg-blue-100 w-[40px] h-[40px] flex items-center justify-center rounded-full mr-4"
+                >
+                  <i class="fas fa-map-marker-alt text-blue-600 text-xl"></i>
+                </div>
+                <div class="w-[90%]">
+                  <h3 class="font-semibold text-gray-800">Alamat Sekolah</h3>
+                  <p class="text-gray-600 mt-1">
+                    Jl. Pendidikan No. 22, Kecamatan Kaur Selatan, Kabupaten
+                    Kaur, Bengkulu 38963
+                  </p>
+                </div>
+              </div>
+
+              <div class="flex items-start mb-4">
+                <div
+                  class="bg-blue-100 w-[40px] h-[40px] flex items-center justify-center rounded-full mr-4"
+                >
+                  <i class="fas fa-envelope text-blue-600 text-xl"></i>
+                </div>
+                <div>
+                  <h3 class="font-semibold text-gray-800">Email</h3>
+                  <p class="text-gray-600 mt-1">
+                    smpn22kaur@disdik.bengkuluprov.go.id
+                  </p>
+                </div>
+              </div>
+
+              <div class="flex items-start">
+                <div
+                  class="bg-blue-100 w-[40px] h-[40px] flex items-center justify-center rounded-full mr-4"
+                >
+                  <i class="fas fa-phone-alt text-blue-600 text-xl"></i>
+                </div>
+                <div>
+                  <h3 class="font-semibold text-gray-800">Telepon</h3>
+                  <p class="text-gray-600 mt-1">(0739) 1234567</p>
+                </div>
+              </div>
+            </div>
+
+            <!-- Social Media -->
+            <div class="bg-white rounded-lg shadow-md p-6 contact-card">
+              <h3 class="font-semibold text-gray-800 mb-4">Media Sosial</h3>
+              <div class="flex space-x-4">
+                <a
+                  href="#"
+                  class="bg-blue-600 text-white w-10 h-10 flex items-center justify-center rounded-full hover:bg-blue-700 transition"
+                >
+                  <i class="fab fa-facebook-f text-lg"></i>
+                </a>
+                <a
+                  href="#"
+                  class="bg-pink-600 text-white w-10 h-10 flex items-center justify-center rounded-full hover:bg-pink-700 transition"
+                >
+                  <i class="fab fa-instagram text-lg"></i>
+                </a>
+                <a
+                  href="#"
+                  class="bg-blue-400 text-white w-10 h-10 flex items-center justify-center rounded-full hover:bg-blue-500 transition"
+                >
+                  <i class="fab fa-twitter text-lg"></i>
+                </a>
+                <a
+                  href="#"
+                  class="bg-red-600 text-white w-10 h-10 flex items-center justify-center rounded-full hover:bg-red-700 transition"
+                >
+                  <i class="fab fa-youtube text-lg"></i>
+                </a>
+              </div>
+            </div>
+          </div>
+
+          <!-- Google Maps -->
+          <div class="bg-white rounded-lg shadow-md overflow-hidden">
+            <iframe
+              src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d252894.0257633264!2d102.984653!3d-4.6966!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zNMKwNDEnNDcuNyJTIDEwMsKwNTknMDQuNyJF!5e0!3m2!1sen!2sid!4v1620000000000!5m2!1sen!2sid"
+              width="100%"
+              height="300"
+              style="border: 0"
+              allowfullscreen=""
+              loading="lazy"
+              aria-label="Peta lokasi SMPN 22 Kaur"
+              title="Lokasi SMPN 22 Kaur"
+            >
+            </iframe>
+          </div>
+        </div>
+
+        <!-- Contact Form -->
+        <div>
+          <div class="bg-white rounded-lg shadow-md p-6">
+            <h2 class="text-2xl font-bold text-gray-800 mb-6">Kirim Pesan</h2>
+            <form>
+              <div class="mb-4">
+                <label for="name" class="block text-gray-700 font-medium mb-2"
+                  >Nama Lengkap</label
+                >
+                <input
+                  type="text"
+                  id="name"
+                  class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-blue-500 transition"
+                  placeholder="Masukkan nama lengkap Anda"
+                />
+              </div>
+
+              <div class="mb-4">
+                <label for="email" class="block text-gray-700 font-medium mb-2"
+                  >Alamat Email</label
+                >
+                <input
+                  type="email"
+                  id="email"
+                  class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-blue-500 transition"
+                  placeholder="Masukkan alamat email Anda"
+                />
+              </div>
+
+              <div class="mb-4">
+                <label
+                  for="subject"
+                  class="block text-gray-700 font-medium mb-2"
+                  >Subjek</label
+                >
+                <input
+                  type="text"
+                  id="subject"
+                  class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-blue-500 transition"
+                  placeholder="Masukkan subjek pesan"
+                />
+              </div>
+
+              <div class="mb-6">
+                <label
+                  for="message"
+                  class="block text-gray-700 font-medium mb-2"
+                  >Pesan</label
+                >
+                <textarea
+                  id="message"
+                  rows="5"
+                  class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-blue-500 transition"
+                  placeholder="Tulis pesan Anda di sini"
+                ></textarea>
+              </div>
+
+              <button
+                type="submit"
+                class="w-full bg-blue-600 text-white py-3 px-4 rounded-lg font-semibold hover:bg-blue-700 transition focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-offset-2"
+              >
+                Kirim Pesan
+              </button>
+            </form>
+          </div>
+
+          <!-- Additional Info -->
+          <div class="mt-8 bg-blue-50 rounded-lg p-6">
+            <h3 class="text-lg font-semibold text-gray-800 mb-3">
+              Jam Operasional
+            </h3>
+            <ul class="space-y-2">
+              <li class="flex items-center">
+                <i class="far fa-clock text-blue-600 mr-3"></i>
+                <span class="text-gray-700"
+                  >Senin - Jumat: 07.30 - 15.30 WIB</span
+                >
+              </li>
+              <li class="flex items-center">
+                <i class="far fa-clock text-blue-600 mr-3"></i>
+                <span class="text-gray-700">Sabtu: 08.00 - 12.00 WIB</span>
+              </li>
+              <li class="flex items-center">
+                <i class="fas fa-times-circle text-red-500 mr-3"></i>
+                <span class="text-gray-700">Minggu & Hari Libur: Tutup</span>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="bg-gray-800 text-white py-2">
+      <div class="container mx-auto px-4 max-w-6xl">
+        <div class="text-center">
+          <p class="text-gray-500 text-xs mt-3">
+            © 2023 SMPN 22 Kaur. Seluruh hak cipta dilindungi.
+          </p>
+        </div>
+      </div>
+    </footer>
+
+    <script>
+      // Mobile menu toggle
+      document
+        .querySelector("header button")
+        .addEventListener("click", function () {
+          const menu = document.getElementById("mobile-menu");
+          menu.classList.toggle("hidden");
+        });
+      // Form submission handling
+      document.querySelector("form").addEventListener("submit", function (e) {
+        e.preventDefault();
+
+        // Get form values
+        const name = document.getElementById("name").value;
+        const email = document.getElementById("email").value;
+        const subject = document.getElementById("subject").value;
+        const message = document.getElementById("message").value;
+
+        // Simple validation
+        if (!name || !email || !subject || !message) {
+          alert("Harap lengkapi semua field!");
+          return;
+        }
+
+        // Here you would typically send the data to a server
+        // For demo purposes, we'll just show an alert
+        alert(
+          `Terima kasih, ${name}! Pesan Anda telah terkirim. Kami akan segera menghubungi Anda melalui email.`
+        );
+
+        // Reset form
+        this.reset();
+      });
+    </script>
+  </body>
+</html>
