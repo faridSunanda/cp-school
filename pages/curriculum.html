@@ -1,0 +1,708 @@
+<!DOCTYPE html>
+<html lang="id">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Kurikulum & Program | SMPN 22 Kaur</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+    />
+    <script>
+      tailwind.config = {
+        theme: {
+          extend: {
+            colors: {
+              primary: "#2563eb",
+              secondary: "#1e40af",
+              accent: "#3b82f6",
+            },
+          },
+        },
+      };
+    </script>
+    <style>
+      @import url("https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap");
+
+      body {
+        font-family: "Poppins", sans-serif;
+        scroll-behavior: smooth;
+      }
+
+      .hero-gradient {
+        background: linear-gradient(135deg, #1e3a8a 0%, #2563eb 100%);
+      }
+
+      .card-hover:hover {
+        transform: translateY(-5px);
+        box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+      }
+
+      .transition-all {
+        transition: all 0.3s ease;
+      }
+
+      /* import */
+      .header-sticky {
+        position: sticky;
+        top: 0;
+        z-index: 50;
+        transition: all 0.3s ease;
+      }
+      .gradient-bg {
+        background: linear-gradient(135deg, #2563eb 0%, #1e40af 100%);
+      }
+      .menu-item:hover .menu-dropdown {
+        opacity: 1;
+        visibility: visible;
+        transform: translateY(0);
+      }
+      .news-card:hover {
+        transform: translateY(-5px);
+        box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+      }
+    </style>
+  </head>
+  <body class="bg-gray-50">
+    <!-- Header -->
+    <header class="header-sticky bg-white shadow-md">
+      <div
+        class="container mx-auto px-4 py-3 flex justify-between items-center"
+      >
+        <div class="flex items-center space-x-3">
+          <div class="w-16 h-16 rounded-lg flex items-center justify-center">
+            <img
+              src="/image/logo.png"
+              alt="Logo SMP Negeri XX Kaur - Perisai dengan motif khas Bengkulu dan tulisan SMP Negeri XX Kaur"
+              class="w-12 h-12 object-contain"
+            />
+          </div>
+          <div>
+            <h1 class="font-bold text-xl text-gray-800">SMP Negeri XX Kaur</h1>
+            <p class="text-sm text-gray-600">Sekolah Unggulan Berkualitas</p>
+          </div>
+        </div>
+
+        <nav class="hidden md:block">
+          <ul class="flex space-x-6">
+            <li class="relative menu-item">
+              <a
+                href="../"
+                class="text-gray-800 hover:text-primary font-medium py-2"
+                >Beranda</a
+              >
+            </li>
+            <li class="relative menu-item">
+              <a
+                href="profil.html"
+                class="text-gray-800 hover:text-primary font-medium py-2"
+              >
+                Profil <i class="fa-solid fa-angle-down text-sm"></i
+              ></a>
+              <div
+                class="menu-dropdown absolute left-0 mt-2 w-48 bg-white rounded-md shadow-lg opacity-0 invisible transform -translate-y-2 transition-all duration-300"
+              >
+                <div class="py-1">
+                  <a
+                    href="profil.html#visi-misi"
+                    class="block px-4 py-2 text-gray-700 hover:bg-gray-100"
+                    >Visi & Misi</a
+                  >
+                  <a
+                    href="profil.html#sejarah"
+                    class="block px-4 py-2 text-gray-700 hover:bg-gray-100"
+                    >Sejarah</a
+                  >
+                </div>
+              </div>
+            </li>
+            <li class="relative menu-item">
+              <a
+                href="staff.html"
+                class="text-gray-800 hover:text-primary font-medium py-2"
+                >Guru & Staff</a
+              >
+            </li>
+            <li class="relative menu-item">
+              <a
+                href="curriculum.html"
+                class="text-gray-800 hover:text-primary font-medium py-2"
+                >Kurikulum</a
+              >
+            </li>
+            <li class="relative menu-item">
+              <a
+                href="news.html"
+                class="text-gray-800 hover:text-primary font-medium py-2"
+                >Berita</a
+              >
+            </li>
+            <li class="relative menu-item">
+              <a
+                href="gallery.html"
+                class="text-gray-800 hover:text-primary font-medium py-2"
+                >Galeri</a
+              >
+            </li>
+            <li class="relative menu-item">
+              <a
+                href="ppdb.html"
+                class="text-gray-800 hover:text-primary font-medium py-2"
+                >PPDB</a
+              >
+            </li>
+            <li class="relative menu-item">
+              <a
+                href="contact.html"
+                class="text-gray-800 hover:text-primary font-medium py-2"
+                >Kontak</a
+              >
+            </li>
+          </ul>
+        </nav>
+
+        <button class="md:hidden text-gray-600">
+          <i class="fas fa-bars text-2xl"></i>
+        </button>
+      </div>
+    </header>
+
+    <!-- Mobile Menu -->
+    <div id="mobile-menu" class="md:hidden hidden bg-white shadow-lg">
+      <div class="container mx-auto px-4 py-3">
+        <ul class="space-y-3">
+          <li><a href="/" class="block py-2 text-gray-800">Beranda</a></li>
+          <li>
+            <a href="profil.html" class="block py-2 text-gray-800">Profil</a>
+          </li>
+          <li>
+            <a href="staff.html" class="block py-2 text-gray-800"
+              >Guru & Staff</a
+            >
+          </li>
+          <li>
+            <a href="curriculum.html" class="block py-2 text-gray-800"
+              >Kurikulum</a
+            >
+          </li>
+          <li>
+            <a href="news.html" class="block py-2 text-gray-800">Berita</a>
+          </li>
+          <li>
+            <a href="gallery.html" class="block py-2 text-gray-800">Galeri</a>
+          </li>
+          <li>
+            <a href="ppdb.html" class="block py-2 text-gray-800">PPDB</a>
+          </li>
+          <li>
+            <a href="contact.html" class="block py-2 text-gray-800">Kontak</a>
+          </li>
+        </ul>
+      </div>
+    </div>
+
+    <!-- Hero Section
+    <section
+      class="hero-gradient text-white py-20 lg:py-28 px-4 md:px-6 lg:px-8"
+    >
+      <div class="max-w-6xl mx-auto text-center">
+        <h1 class="text-4xl md:text-5xl lg:text-6xl font-bold mb-6">
+          Kurikulum & Program
+        </h1>
+        <div class="w-24 h-1.5 bg-yellow-400 mx-auto mb-8"></div>
+        <p class="text-lg md:text-xl max-w-3xl mx-auto">
+          Menyajikan program pendidikan berkualitas untuk mengembangkan potensi
+          siswa secara holistik di SMP Negeri 22 Kaur
+        </p>
+      </div>
+    </section> -->
+
+    <!-- Breadcrumb -->
+    <div class="bg-gray-100 py-3 px-6">
+      <div class="max-w-6xl mx-auto flex items-center space-x-2 text-sm">
+        <a href="#" class="text-blue-600 hover:underline">Beranda</a>
+        <span>/</span>
+        <span class="text-gray-600">Kurikulum & Program</span>
+      </div>
+    </div>
+
+    <!-- Main Content -->
+    <div class="max-w-6xl mx-auto py-12 px-4 md:px-6 lg:px-8">
+      <!-- Kurikulum Section -->
+      <section class="mb-16">
+        <div class="flex flex-col lg:flex-row items-center gap-8">
+          <div class="lg:w-1/2">
+            <img
+              src="https://storage.googleapis.com/workspace-0f70711f-8b4e-4d94-86f1-2a93ccde5887/image/09f5a5a9-bfa6-4d85-944e-c80885d3c954.png"
+              alt="Siswa SMP sedang belajar di kelas dengan guru, menggunakan buku dan laptop, suasana modern"
+              class="rounded-lg shadow-md w-full h-auto transition-all card-hover"
+            />
+          </div>
+          <div class="lg:w-1/2">
+            <h2 class="text-3xl font-bold text-gray-800 mb-4">
+              Kurikulum Merdeka
+            </h2>
+            <div class="w-20 h-1 bg-blue-600 mb-6"></div>
+            <p class="text-gray-600 mb-4">
+              SMPN 22 Kaur menerapkan Kurikulum Merdeka yang memberikan
+              fleksibilitas bagi guru dan siswa untuk mengembangkan pembelajaran
+              yang bermakna, relevan, dan menyenangkan.
+            </p>
+            <p class="text-gray-600 mb-6">
+              Kurikulum ini berfokus pada penguatan kompetensi dasar literasi,
+              numerasi, karakter, serta pengembangan bakat dan minat siswa
+              sesuai kebutuhan zaman.
+            </p>
+            <ul class="space-y-2">
+              <li class="flex items-start">
+                <span class="text-blue-600 mr-2 mt-1"
+                  ><i class="fas fa-check-circle"></i
+                ></span>
+                <span class="text-gray-700"
+                  >Pembelajaran berdiferensiasi sesuai kebutuhan siswa</span
+                >
+              </li>
+              <li class="flex items-start">
+                <span class="text-blue-600 mr-2 mt-1"
+                  ><i class="fas fa-check-circle"></i
+                ></span>
+                <span class="text-gray-700"
+                  >Proyek Penguatan Profil Pelajar Pancasila</span
+                >
+              </li>
+              <li class="flex items-start">
+                <span class="text-blue-600 mr-2 mt-1"
+                  ><i class="fas fa-check-circle"></i
+                ></span>
+                <span class="text-gray-700"
+                  >Assesmen formatif untuk perkembangan belajar</span
+                >
+              </li>
+            </ul>
+          </div>
+        </div>
+      </section>
+
+      <!-- Program Unggulan Section -->
+      <section class="mb-16">
+        <h2 class="text-3xl font-bold text-center text-gray-800 mb-12">
+          Program Unggulan Sekolah
+        </h2>
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+          <!-- Program Tahfidz -->
+          <div
+            class="bg-white rounded-xl shadow-md overflow-hidden transition-all card-hover"
+          >
+            <div class="h-48 overflow-hidden">
+              <img
+                src="https://storage.googleapis.com/workspace-0f70711f-8b4e-4d94-86f1-2a93ccde5887/image/fd6d5a80-1af1-4492-95ed-8149661482db.png"
+                alt="Siswa muslim sedang menghafal Al-Quran di masjid sekolah dengan khusyuk"
+                class="w-full h-full object-cover"
+              />
+            </div>
+            <div class="p-6">
+              <div class="flex items-center mb-3">
+                <div class="bg-blue-100 p-2 rounded-full mr-3">
+                  <i class="fas fa-quran text-blue-600 text-xl"></i>
+                </div>
+                <h3 class="text-xl font-semibold text-gray-800">
+                  Program Tahfidz
+                </h3>
+              </div>
+              <p class="text-gray-600">
+                Program unggulan penghafalan Al-Quran dengan target hafalan per
+                jenjang kelas. Didukung oleh guru tahfidz bersertifikat dan
+                metode mutqin.
+              </p>
+            </div>
+          </div>
+
+          <!-- Program Pramuka -->
+          <div
+            class="bg-white rounded-xl shadow-md overflow-hidden transition-all card-hover"
+          >
+            <div class="h-48 overflow-hidden">
+              <img
+                src="https://storage.googleapis.com/workspace-0f70711f-8b4e-4d94-86f1-2a93ccde5887/image/821dd5ac-150f-435f-9979-9e004599ba20.png"
+                alt="Kegiatan pramuka di alam terbuka dengan siswa mengenakan seragam coklat, sedang membangun tenda"
+                class="w-full h-full object-cover"
+              />
+            </div>
+            <div class="p-6">
+              <div class="flex items-center mb-3">
+                <div class="bg-green-100 p-2 rounded-full mr-3">
+                  <i class="fas fa-campground text-green-600 text-xl"></i>
+                </div>
+                <h3 class="text-xl font-semibold text-gray-800">
+                  Program Pramuka
+                </h3>
+              </div>
+              <p class="text-gray-600">
+                Ekstrakurikuler wajib untuk membentuk karakter disiplin,
+                mandiri, dan peduli lingkungan melalui berbagai kegiatan
+                kepramukaan yang menyenangkan.
+              </p>
+            </div>
+          </div>
+
+          <!-- Program Literasi -->
+          <div
+            class="bg-white rounded-xl shadow-md overflow-hidden transition-all card-hover"
+          >
+            <div class="h-48 overflow-hidden">
+              <img
+                src="https://storage.googleapis.com/workspace-0f70711f-8b4e-4d94-86f1-2a93ccde5887/image/859fd1b3-84b6-4c1a-a274-105057ec1480.png"
+                alt="Perpustakaan sekolah yang modern dengan rak buku penuh, siswa membaca buku dengan nyaman"
+                class="w-full h-full object-cover"
+              />
+            </div>
+            <div class="p-6">
+              <div class="flex items-center mb-3">
+                <div class="bg-yellow-100 p-2 rounded-full mr-3">
+                  <i class="fas fa-book-open text-yellow-600 text-xl"></i>
+                </div>
+                <h3 class="text-xl font-semibold text-gray-800">
+                  Program Literasi
+                </h3>
+              </div>
+              <p class="text-gray-600">
+                Gerakan literasi sekolah untuk meningkatkan minat baca dan
+                keterampilan menulis siswa melalui berbagai program menarik
+                seperti pojok baca dan lomba menulis.
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Ekstrakurikuler Section -->
+      <section>
+        <div class="bg-white rounded-xl shadow-md p-6 md:p-8">
+          <h2 class="text-3xl font-bold text-center text-gray-800 mb-8">
+            Ekstrakurikuler
+          </h2>
+          <div class="w-24 h-1 bg-blue-600 mx-auto mb-8"></div>
+          <p class="text-gray-600 text-center max-w-3xl mx-auto mb-12">
+            SMPN 22 Kaur menyediakan berbagai pilihan ekstrakurikuler untuk
+            mengembangkan bakat dan minat siswa di bidang seni, olahraga, sains,
+            dan keterampilan lainnya.
+          </p>
+
+          <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+            <!-- Kolom Pertama -->
+            <div class="space-y-4">
+              <!-- Ekskul Olahraga -->
+              <div class="bg-blue-50 rounded-lg p-5 transition-all card-hover">
+                <h4
+                  class="flex items-center text-lg font-semibold text-blue-800 mb-3"
+                >
+                  <i class="fas fa-running mr-3"></i>
+                  Olahraga
+                </h4>
+                <ul class="space-y-2 text-gray-700">
+                  <li class="flex items-start">
+                    <span class="text-blue-600 mr-2"
+                      ><i class="fas fa-check"></i
+                    ></span>
+                    <span>Futsal</span>
+                  </li>
+                  <li class="flex items-start">
+                    <span class="text-blue-600 mr-2"
+                      ><i class="fas fa-check"></i
+                    ></span>
+                    <span>Bulu Tangkis</span>
+                  </li>
+                  <li class="flex items-start">
+                    <span class="text-blue-600 mr-2"
+                      ><i class="fas fa-check"></i
+                    ></span>
+                    <span>Voli</span>
+                  </li>
+                  <li class="flex items-start">
+                    <span class="text-blue-600 mr-2"
+                      ><i class="fas fa-check"></i
+                    ></span>
+                    <span>Tenis Meja</span>
+                  </li>
+                </ul>
+              </div>
+
+              <!-- Ekskul Sains -->
+              <div class="bg-green-50 rounded-lg p-5 transition-all card-hover">
+                <h4
+                  class="flex items-center text-lg font-semibold text-green-800 mb-3"
+                >
+                  <i class="fas fa-microscope mr-3"></i>
+                  Sains & Teknologi
+                </h4>
+                <ul class="space-y-2 text-gray-700">
+                  <li class="flex items-start">
+                    <span class="text-green-600 mr-2"
+                      ><i class="fas fa-check"></i
+                    ></span>
+                    <span>KIR (Karya Ilmiah Remaja)</span>
+                  </li>
+                  <li class="flex items-start">
+                    <span class="text-green-600 mr-2"
+                      ><i class="fas fa-check"></i
+                    ></span>
+                    <span>Robotik</span>
+                  </li>
+                  <li class="flex items-start">
+                    <span class="text-green-600 mr-2"
+                      ><i class="fas fa-check"></i
+                    ></span>
+                    <span>Programming</span>
+                  </li>
+                </ul>
+              </div>
+            </div>
+
+            <!-- Kolom Kedua -->
+            <div class="space-y-4">
+              <!-- Ekskul Seni -->
+              <div
+                class="bg-yellow-50 rounded-lg p-5 transition-all card-hover"
+              >
+                <h4
+                  class="flex items-center text-lg font-semibold text-yellow-800 mb-3"
+                >
+                  <i class="fas fa-paint-brush mr-3"></i>
+                  Seni & Kreativitas
+                </h4>
+                <ul class="space-y-2 text-gray-700">
+                  <li class="flex items-start">
+                    <span class="text-yellow-600 mr-2"
+                      ><i class="fas fa-check"></i
+                    ></span>
+                    <span>Paduan Suara</span>
+                  </li>
+                  <li class="flex items-start">
+                    <span class="text-yellow-600 mr-2"
+                      ><i class="fas fa-check"></i
+                    ></span>
+                    <span>Teater</span>
+                  </li>
+                  <li class="flex items-start">
+                    <span class="text-yellow-600 mr-2"
+                      ><i class="fas fa-check"></i
+                    ></span>
+                    <span>Seni Lukis</span>
+                  </li>
+                  <li class="flex items-start">
+                    <span class="text-yellow-600 mr-2"
+                      ><i class="fas fa-check"></i
+                    ></span>
+                    <span>Fotografi</span>
+                  </li>
+                </ul>
+              </div>
+
+              <!-- Ekskul Lainnya -->
+              <div
+                class="bg-purple-50 rounded-lg p-5 transition-all card-hover"
+              >
+                <h4
+                  class="flex items-center text-lg font-semibold text-purple-800 mb-3"
+                >
+                  <i class="fas fa-star mr-3"></i>
+                  Lainnya
+                </h4>
+                <ul class="space-y-2 text-gray-700">
+                  <li class="flex items-start">
+                    <span class="text-purple-600 mr-2"
+                      ><i class="fas fa-check"></i
+                    ></span>
+                    <span>Palang Merah Remaja (PMR)</span>
+                  </li>
+                  <li class="flex items-start">
+                    <span class="text-purple-600 mr-2"
+                      ><i class="fas fa-check"></i
+                    ></span>
+                    <span>English Club</span>
+                  </li>
+                  <li class="flex items-start">
+                    <span class="text-purple-600 mr-2"
+                      ><i class="fas fa-check"></i
+                    ></span>
+                    <span>Jurnalistik</span>
+                  </li>
+                </ul>
+              </div>
+            </div>
+          </div>
+
+          <div class="text-center mt-12">
+            <p class="text-gray-600 italic">
+              "Ekstrakurikuler dilaksanakan setiap hari Jumat sore dan hari
+              Sabtu pagi sesuai jadwal yang telah ditentukan"
+            </p>
+          </div>
+        </div>
+      </section>
+    </div>
+
+    <!-- Footer -->
+    <footer class="bg-gray-900 text-white py-12">
+      <div class="container mx-auto px-4">
+        <div class="grid md:grid-cols-4 gap-8 mb-8">
+          <div>
+            <h3 class="text-xl font-bold mb-4">Tentang Kami</h3>
+            <p class="text-gray-400">
+              SMP Negeri XX Kaur adalah sekolah unggulan di Kabupaten Kaur yang
+              berkomitmen untuk memberikan pendidikan berkualitas dan membentuk
+              generasi cerdas berkarakter.
+            </p>
+          </div>
+
+          <div>
+            <h3 class="text-xl font-bold mb-4">Tautan Cepat</h3>
+            <ul class="space-y-2">
+              <li>
+                <a href="#" class="text-gray-400 hover:text-white">Beranda</a>
+              </li>
+              <li>
+                <a href="#" class="text-gray-400 hover:text-white"
+                  >Profil Sekolah</a
+                >
+              </li>
+              <li>
+                <a href="#" class="text-gray-400 hover:text-white"
+                  >Guru & Staff</a
+                >
+              </li>
+              <li>
+                <a href="#" class="text-gray-400 hover:text-white">Kurikulum</a>
+              </li>
+              <li>
+                <a href="#" class="text-gray-400 hover:text-white">PPDB</a>
+              </li>
+            </ul>
+          </div>
+
+          <div>
+            <h3 class="text-xl font-bold mb-4">Kontak</h3>
+            <address class="not-italic space-y-2">
+              <p class="text-gray-400">Jl. Pendidikan No., Kaur Selatan</p>
+              <p class="text-gray-400">Kabupaten Kaur, Bengkulu 38963</p>
+              <p class="text-gray-400">Email: info@smpnkaur.sch.id</p>
+              <p class="text-gray-400">Telp: (0739) 1234567</p>
+            </address>
+          </div>
+
+          <div>
+            <h3 class="text-xl font-bold mb-4">Newsletter</h3>
+            <p class="text-gray-400 mb-4">
+              Dapatkan informasi terbaru tentang kegiatan sekolah langsung ke
+              email Anda.
+            </p>
+            <div class="flex">
+              <input
+                type="email"
+                placeholder="Alamat email"
+                class="px-4 py-2 rounded-l-lg w-full bg-gray-800 text-white focus:outline-none"
+              />
+              <button
+                class="bg-primary px-4 py-2 rounded-r-lg hover:bg-blue-700 transition"
+              >
+                <i class="fas fa-paper-plane"></i>
+              </button>
+            </div>
+          </div>
+        </div>
+
+        <div class="pt-6 border-t border-gray-800 text-center text-gray-400">
+          <p class="text-gray-500 text-xs mt-3">
+            © 2023 SMPN 22 Kaur. Seluruh hak cipta dilindungi.
+          </p>
+        </div>
+      </div>
+    </footer>
+
+    <!-- Back to Top Button -->
+    <button
+      onclick="topFunction()"
+      id="backToTopBtn"
+      class="hidden fixed bottom-8 right-8 bg-blue-600 text-white w-10 h-10 rounded-full shadow-lg hover:bg-blue-700 transition-all"
+    >
+      <i class="fas fa-arrow-up"></i>
+    </button>
+
+    <script>
+      // Back to Top Button
+      window.onscroll = function () {
+        scrollFunction();
+      };
+
+      function scrollFunction() {
+        var btn = document.getElementById("backToTopBtn");
+        if (
+          document.body.scrollTop > 300 ||
+          document.documentElement.scrollTop > 300
+        ) {
+          btn.style.display = "block";
+        } else {
+          btn.style.display = "none";
+        }
+      }
+
+      function topFunction() {
+        document.body.scrollTop = 0;
+        document.documentElement.scrollTop = 0;
+      }
+
+      // Card hover effect enhancement
+      document.querySelectorAll(".card-hover").forEach((card) => {
+        card.addEventListener("mouseenter", function () {
+          this.classList.add("shadow-lg");
+        });
+        card.addEventListener("mouseleave", function () {
+          this.classList.remove("shadow-lg");
+        });
+      });
+
+      // Mobile menu toggle
+      document
+        .querySelector("header button")
+        .addEventListener("click", function () {
+          const menu = document.getElementById("mobile-menu");
+          menu.classList.toggle("hidden");
+        });
+
+      // Smooth scrolling for anchor links
+      document.querySelectorAll('a[href^="#"]').forEach((anchor) => {
+        anchor.addEventListener("click", function (e) {
+          e.preventDefault();
+
+          const targetId = this.getAttribute("href");
+          if (targetId === "#") return;
+
+          const targetElement = document.querySelector(targetId);
+          if (targetElement) {
+            window.scrollTo({
+              top: targetElement.offsetTop - 80,
+              behavior: "smooth",
+            });
+
+            // Close mobile menu if open
+            const mobileMenu = document.getElementById("mobile-menu");
+            if (!mobileMenu.classList.contains("hidden")) {
+              mobileMenu.classList.add("hidden");
+            }
+          }
+        });
+      });
+
+      // Sticky header effect
+      window.addEventListener("scroll", function () {
+        const header = document.querySelector("header");
+        if (window.scrollY > 100) {
+          header.classList.add("shadow-lg");
+        } else {
+          header.classList.remove("shadow-lg");
+        }
+      });
+    </script>
+  </body>
+</html>

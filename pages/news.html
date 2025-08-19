@@ -1,0 +1,714 @@
+<!DOCTYPE html>
+<html lang="id">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Berita & Pengumuman - SMPN XX Kaur</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+    />
+    <style>
+      @import url("https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap");
+
+      body {
+        font-family: "Poppins", sans-serif;
+        scroll-behavior: smooth;
+      }
+      .header-sticky {
+        position: sticky;
+        top: 0;
+        z-index: 50;
+        transition: all 0.3s ease;
+      }
+
+      .hero-gradient {
+        background: linear-gradient(135deg, #1e3a8a 0%, #2563eb 100%);
+      }
+      .gradient-bg {
+        background: linear-gradient(135deg, #2563eb 0%, #1e40af 100%);
+      }
+
+      .menu-item:hover .menu-dropdown {
+        opacity: 1;
+        visibility: visible;
+        transform: translateY(0);
+      }
+      .announcement-slider {
+        scroll-behavior: smooth;
+      }
+
+      .calendar-day.active {
+        background-color: #1d4ed8;
+        color: white;
+      }
+
+      @media (max-width: 640px) {
+        .news-card {
+          flex-direction: column;
+        }
+      }
+    </style>
+  </head>
+  <body class="bg-gray-50">
+    <!-- Header -->
+    <header class="header-sticky bg-white shadow-md">
+      <div
+        class="container mx-auto px-4 py-3 flex justify-between items-center"
+      >
+        <div class="flex items-center space-x-3">
+          <div class="w-16 h-16 rounded-lg flex items-center justify-center">
+            <img
+              src="/image/logo.png"
+              alt="Logo SMP Negeri XX Kaur - Perisai dengan motif khas Bengkulu dan tulisan SMP Negeri XX Kaur"
+              class="w-12 h-12 object-contain"
+            />
+          </div>
+          <div>
+            <h1 class="font-bold text-xl text-gray-800">SMP Negeri XX Kaur</h1>
+            <p class="text-sm text-gray-600">Sekolah Unggulan Berkualitas</p>
+          </div>
+        </div>
+
+        <nav class="hidden md:block">
+          <ul class="flex space-x-6">
+            <li class="relative menu-item">
+              <a
+                href="/"
+                class="text-gray-800 hover:text-primary font-medium py-2"
+                >Beranda</a
+              >
+            </li>
+            <li class="relative menu-item">
+              <a
+                href="profil.html"
+                class="text-gray-800 hover:text-primary font-medium py-2"
+              >
+                Profil <i class="fa-solid fa-angle-down text-sm"></i
+              ></a>
+              <div
+                class="menu-dropdown absolute left-0 mt-2 w-48 bg-white rounded-md shadow-lg opacity-0 invisible transform -translate-y-2 transition-all duration-300"
+              >
+                <div class="py-1">
+                  <a
+                    href="profil.html#visi-misi"
+                    class="block px-4 py-2 text-gray-700 hover:bg-gray-100"
+                    >Visi & Misi</a
+                  >
+                  <a
+                    href="profil.html#sejarah"
+                    class="block px-4 py-2 text-gray-700 hover:bg-gray-100"
+                    >Sejarah</a
+                  >
+                </div>
+              </div>
+            </li>
+            <li class="relative menu-item">
+              <a
+                href="staff.html"
+                class="text-gray-800 hover:text-primary font-medium py-2"
+                >Guru & Staff</a
+              >
+            </li>
+            <li class="relative menu-item">
+              <a
+                href="curriculum.html"
+                class="text-gray-800 hover:text-primary font-medium py-2"
+                >Kurikulum</a
+              >
+            </li>
+            <li class="relative menu-item">
+              <a
+                href="news.html"
+                class="text-gray-800 hover:text-primary font-medium py-2"
+                >Berita</a
+              >
+            </li>
+            <li class="relative menu-item">
+              <a
+                href="gallery.html"
+                class="text-gray-800 hover:text-primary font-medium py-2"
+                >Galeri</a
+              >
+            </li>
+            <li class="relative menu-item">
+              <a
+                href="ppdb.html"
+                class="text-gray-800 hover:text-primary font-medium py-2"
+                >PPDB</a
+              >
+            </li>
+            <li class="relative menu-item">
+              <a
+                href="contact.html"
+                class="text-gray-800 hover:text-primary font-medium py-2"
+                >Kontak</a
+              >
+            </li>
+          </ul>
+        </nav>
+
+        <button class="md:hidden text-gray-600">
+          <i class="fas fa-bars text-2xl"></i>
+        </button>
+      </div>
+    </header>
+
+    <!-- Mobile Menu -->
+    <div id="mobile-menu" class="md:hidden hidden bg-white shadow-lg">
+      <div class="container mx-auto px-4 py-3">
+        <ul class="space-y-3">
+          <li><a href="/" class="block py-2 text-gray-800">Beranda</a></li>
+          <li>
+            <a href="profil.html" class="block py-2 text-gray-800">Profil</a>
+          </li>
+          <li>
+            <a href="staff.html" class="block py-2 text-gray-800"
+              >Guru & Staff</a
+            >
+          </li>
+          <li>
+            <a href="curriculum.html" class="block py-2 text-gray-800"
+              >Kurikulum</a
+            >
+          </li>
+          <li>
+            <a href="news.html" class="block py-2 text-gray-800">Berita</a>
+          </li>
+          <li>
+            <a href="gallery.html" class="block py-2 text-gray-800">Galeri</a>
+          </li>
+          <li>
+            <a href="ppdb.html" class="block py-2 text-gray-800">PPDB</a>
+          </li>
+          <li>
+            <a href="contact.html" class="block py-2 text-gray-800">Kontak</a>
+          </li>
+        </ul>
+      </div>
+    </div>
+
+    <!-- Hero Section
+    <section
+      class="hero-gradient text-white py-20 lg:py-28 px-4 md:px-6 lg:px-8"
+    >
+      <div class="max-w-6xl mx-auto text-center">
+        <h1 class="text-4xl md:text-5xl lg:text-6xl font-bold mb-6">
+          Berita & Pengumuman
+        </h1>
+        <div class="w-24 h-1.5 bg-yellow-400 mx-auto mb-8"></div>
+        <p class="text-lg md:text-xl max-w-3xl mx-auto">
+          Informasi terbaru seputar kegiatan dan pengumuman penting SMP Negeri
+          XX Kaur
+        </p>
+      </div>
+    </section> -->
+
+    <!-- Breadcrumb -->
+    <div class="bg-gray-100 py-3 px-6">
+      <div class="max-w-6xl mx-auto flex items-center space-x-2 text-sm">
+        <a href="/" class="text-blue-600 hover:underline">Beranda</a>
+        <span>/</span>
+        <span class="text-gray-600">Berita & Pengumuman</span>
+      </div>
+    </div>
+
+    <!-- Pengumuman Slider -->
+    <div class="container mx-auto px-4 mt-8">
+      <div
+        class="bg-yellow-100 border-l-4 border-yellow-500 p-4 mb-8 rounded-r"
+      >
+        <h2 class="text-xl font-bold text-blue-800 mb-2 flex items-center">
+          <i class="fas fa-bullhorn mr-2"></i> Pengumuman Penting
+        </h2>
+        <div class="relative">
+          <div
+            class="announcement-slider flex overflow-x-auto space-x-4 py-2 scrollbar-hide"
+            style="scroll-snap-type: x mandatory"
+          >
+            <div
+              class="flex-shrink-0 w-full md:w-1/2 lg:w-1/3 bg-white p-4 rounded-lg shadow border border-gray-200 scroll-snap-align-start"
+            >
+              <div class="flex items-start">
+                <div class="bg-red-100 text-red-800 rounded-full p-2 mr-3">
+                  <i class="fas fa-exclamation-circle"></i>
+                </div>
+                <div>
+                  <h3 class="font-bold text-blue-800">
+                    Pendaftaran Peserta Didik Baru
+                  </h3>
+                  <p class="text-sm text-gray-600 mt-1">
+                    Pendaftaran dibuka mulai 15 Juli 2023. Persiapkan dokumen
+                    yang diperlukan.
+                  </p>
+                  <p class="text-xs text-gray-500 mt-2">
+                    <i class="far fa-calendar-alt mr-1"></i> 10 Juni 2023
+                  </p>
+                </div>
+              </div>
+            </div>
+            <div
+              class="flex-shrink-0 w-full md:w-1/2 lg:w-1/3 bg-white p-4 rounded-lg shadow border border-gray-200 scroll-snap-align-start"
+            >
+              <div class="flex items-start">
+                <div class="bg-blue-100 text-blue-800 rounded-full p-2 mr-3">
+                  <i class="fas fa-info-circle"></i>
+                </div>
+                <div>
+                  <h3 class="font-bold text-blue-800">
+                    Jadwal Ujian Semester Genap
+                  </h3>
+                  <p class="text-sm text-gray-600 mt-1">
+                    Silakan cek jadwal ujian semester genap tahun ajaran
+                    2022/2023.
+                  </p>
+                  <p class="text-xs text-gray-500 mt-2">
+                    <i class="far fa-calendar-alt mr-1"></i> 5 Juni 2023
+                  </p>
+                </div>
+              </div>
+            </div>
+            <div
+              class="flex-shrink-0 w-full md:w-1/2 lg:w-1/3 bg-white p-4 rounded-lg shadow border border-gray-200 scroll-snap-align-start"
+            >
+              <div class="flex items-start">
+                <div class="bg-green-100 text-green-800 rounded-full p-2 mr-3">
+                  <i class="fas fa-trophy"></i>
+                </div>
+                <div>
+                  <h3 class="font-bold text-blue-800">
+                    Kejuaraan OSN Tingkat Kabupaten
+                  </h3>
+                  <p class="text-sm text-gray-600 mt-1">
+                    Selamat kepada ananda Fitri yang berhasil meraih juara 2
+                    Matematika.
+                  </p>
+                  <p class="text-xs text-gray-500 mt-2">
+                    <i class="far fa-calendar-alt mr-1"></i> 3 Juni 2023
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
+          <button
+            class="announcement-prev absolute left-0 top-1/2 -translate-y-1/2 -ml-4 bg-white p-2 rounded-full shadow-md text-blue-800 hover:bg-blue-100 transition"
+          >
+            <i class="fas fa-chevron-left"></i>
+          </button>
+          <button
+            class="announcement-next absolute right-0 top-1/2 -translate-y-1/2 -mr-4 bg-white p-2 rounded-full shadow-md text-blue-800 hover:bg-blue-100 transition"
+          >
+            <i class="fas fa-chevron-right"></i>
+          </button>
+        </div>
+      </div>
+    </div>
+
+    <!-- Main Content -->
+    <div class="container mx-auto px-4 py-8 lg:flex lg:space-x-8">
+      <!-- Berita Section -->
+      <div class="lg:w-2/3">
+        <h2 class="text-2xl font-bold text-blue-800 mb-6 flex items-center">
+          <i class="fas fa-newspaper mr-2"></i> Berita Terbaru
+        </h2>
+
+        <div class="space-y-6">
+          <!-- News Card 1 -->
+          <div
+            class="bg-white rounded-lg shadow-md overflow-hidden news-card flex flex-col md:flex-row"
+          >
+            <div class="md:w-1/3">
+              <img
+                src="https://storage.googleapis.com/workspace-0f70711f-8b4e-4d94-86f1-2a93ccde5887/image/f7a8065b-0235-4cea-bafa-1dad7d73d127.png"
+                alt="Kegiatan pentas seni siswa SMPN XX Kaur di aula sekolah dengan panggung berhias warna-warni"
+                class="w-full h-full object-cover"
+              />
+            </div>
+            <div class="p-6 md:w-2/3">
+              <div class="flex items-center text-sm text-gray-500 mb-2">
+                <span class="bg-blue-100 text-blue-800 px-2 py-1 rounded mr-2"
+                  >Kegiatan</span
+                >
+                <span
+                  ><i class="far fa-calendar-alt mr-1"></i> 2 Juni 2023</span
+                >
+              </div>
+              <h3 class="text-xl font-bold text-blue-800 mb-2">
+                Pentas Seni Tahun Ajaran 2022/2023
+              </h3>
+              <p class="text-gray-600 mb-4">
+                SMPN XX Kaur sukses menyelenggarakan pentas seni tahunan dengan
+                tema "Budaya Nusantara". Kegiatan ini menampilkan berbagai
+                pertunjukan dari seluruh kelas...
+              </p>
+              <a
+                href="#"
+                class="text-blue-600 font-medium hover:text-blue-800 flex items-center"
+              >
+                Baca selengkapnya <i class="fas fa-arrow-right ml-2"></i>
+              </a>
+            </div>
+          </div>
+
+          <!-- News Card 2 -->
+          <div
+            class="bg-white rounded-lg shadow-md overflow-hidden news-card flex flex-col md:flex-row"
+          >
+            <div class="md:w-1/3">
+              <img
+                src="https://storage.googleapis.com/workspace-0f70711f-8b4e-4d94-86f1-2a93ccde5887/image/e4fdefa8-2cf7-4cbe-a8fc-d7eca8b8f4cb.png"
+                alt="Siswa SMPN XX Kaur sedang mengikuti lomba cerdas cermat dengan seragam merah putih"
+                class="w-full h-full object-cover"
+              />
+            </div>
+            <div class="p-6 md:w-2/3">
+              <div class="flex items-center text-sm text-gray-500 mb-2">
+                <span class="bg-green-100 text-green-800 px-2 py-1 rounded mr-2"
+                  >Prestasi</span
+                >
+                <span
+                  ><i class="far fa-calendar-alt mr-1"></i> 28 Mei 2023</span
+                >
+              </div>
+              <h3 class="text-xl font-bold text-blue-800 mb-2">
+                Juara 1 Lomba Cerdas Cermat Tingkat Kabupaten
+              </h3>
+              <p class="text-gray-600 mb-4">
+                Tim cerdas cermat SMPN XX Kaur berhasil meraih juara 1 dalam
+                kompetisi tingkat kabupaten yang diadakan oleh Dinas Pendidikan
+                Kabupaten Kaur...
+              </p>
+              <a
+                href="#"
+                class="text-blue-600 font-medium hover:text-blue-800 flex items-center"
+              >
+                Baca selengkapnya <i class="fas fa-arrow-right ml-2"></i>
+              </a>
+            </div>
+          </div>
+
+          <!-- News Card 3 -->
+          <div
+            class="bg-white rounded-lg shadow-md overflow-hidden news-card flex flex-col md:flex-row"
+          >
+            <div class="md:w-1/3">
+              <img
+                src="https://storage.googleapis.com/workspace-0f70711f-8b4e-4d94-86f1-2a93ccde5887/image/03fb987a-0a69-4dad-a686-d2a4dfa811fd.png"
+                alt="Workshop guru SMPN XX Kaur di ruang pertemuan dengan laptop dan proyektor"
+                class="w-full h-full object-cover"
+              />
+            </div>
+            <div class="p-6 md:w-2/3">
+              <div class="flex items-center text-sm text-gray-500 mb-2">
+                <span
+                  class="bg-purple-100 text-purple-800 px-2 py-1 rounded mr-2"
+                  >Pendidikan</span
+                >
+                <span
+                  ><i class="far fa-calendar-alt mr-1"></i> 20 Mei 2023</span
+                >
+              </div>
+              <h3 class="text-xl font-bold text-blue-800 mb-2">
+                Workshop Peningkatan Kompetensi Guru
+              </h3>
+              <p class="text-gray-600 mb-4">
+                Dalam rangka meningkatkan kualitas pengajaran, SMPN XX Kaur
+                mengadakan workshop selama 2 hari dengan tema "Inovasi
+                Pembelajaran di Era Digital"...
+              </p>
+              <a
+                href="#"
+                class="text-blue-600 font-medium hover:text-blue-800 flex items-center"
+              >
+                Baca selengkapnya <i class="fas fa-arrow-right ml-2"></i>
+              </a>
+            </div>
+          </div>
+        </div>
+
+        <div class="mt-8 flex justify-center">
+          <button
+            class="bg-blue-700 text-white px-6 py-2 rounded-md hover:bg-blue-800 transition flex items-center"
+          >
+            Lihat Berita Lainnya <i class="fas fa-chevron-right ml-2"></i>
+          </button>
+        </div>
+      </div>
+
+      <!-- Sidebar -->
+      <div class="lg:w-1/3 mt-8 lg:mt-0">
+        <!-- Kalender Section -->
+        <div class="bg-white rounded-lg shadow-md p-6 mb-6">
+          <h2 class="text-xl font-bold text-blue-800 mb-4 flex items-center">
+            <i class="fas fa-calendar-alt mr-2"></i> Kalender Akademik
+          </h2>
+
+          <div class="mb-4 flex justify-between items-center">
+            <button class="text-blue-700 hover:text-blue-900" id="prev-month">
+              <i class="fas fa-chevron-left"></i>
+            </button>
+            <h3 class="font-semibold" id="current-month">Juni 2023</h3>
+            <button class="text-blue-700 hover:text-blue-900" id="next-month">
+              <i class="fas fa-chevron-right"></i>
+            </button>
+          </div>
+
+          <div id="calendar-dates-container"></div>
+
+          <div class="mt-4 border-t pt-4">
+            <h4 class="font-semibold mb-2">Kegiatan Hari Ini:</h4>
+            <ul class="space-y-2 text-sm">
+              <li class="flex items-start">
+                <span
+                  class="bg-blue-700 text-white rounded-full w-5 h-5 flex items-center justify-center text-xs mr-2 mt-0.5"
+                  >1</span
+                >
+                <span>Rapat Persiapan Ujian Akhir</span>
+              </li>
+              <li class="flex items-start">
+                <span
+                  class="bg-blue-700 text-white rounded-full w-5 h-5 flex items-center justify-center text-xs mr-2 mt-0.5"
+                  >2</span
+                >
+                <span>Kunjungan Perpustakaan Kelas 8</span>
+              </li>
+            </ul>
+          </div>
+        </div>
+
+        <!-- Pengumuman Cepat -->
+        <div class="bg-white rounded-lg shadow-md p-6">
+          <h2 class="text-xl font-bold text-blue-800 mb-4 flex items-center">
+            <i class="fas fa-bell mr-2"></i> Pengumuman Cepat
+          </h2>
+
+          <div class="space-y-4">
+            <div class="flex items-start">
+              <div class="bg-yellow-100 text-yellow-800 rounded-full p-2 mr-3">
+                <i class="fas fa-exclamation-triangle"></i>
+              </div>
+              <div>
+                <h3 class="font-semibold text-blue-800">
+                  Libur Semester Genap
+                </h3>
+                <p class="text-sm text-gray-600">
+                  Mulai tanggal 24 Juni - 15 Juli 2023
+                </p>
+              </div>
+            </div>
+
+            <div class="flex items-start">
+              <div class="bg-blue-100 text-blue-800 rounded-full p-2 mr-3">
+                <i class="fas fa-book"></i>
+              </div>
+              <div>
+                <h3 class="font-semibold text-blue-800">
+                  Pengembalian Buku Perpustakaan
+                </h3>
+                <p class="text-sm text-gray-600">
+                  Harap dikembalikan sebelum 20 Juni 2023
+                </p>
+              </div>
+            </div>
+
+            <div class="flex items-start">
+              <div class="bg-green-100 text-green-800 rounded-full p-2 mr-3">
+                <i class="fas fa-medal"></i>
+              </div>
+              <div>
+                <h3 class="font-semibold text-blue-800">Penerimaan Raport</h3>
+                <p class="text-sm text-gray-600">
+                  Tanggal 23 Juni 2023 pukul 08.00 WIB
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="bg-gray-900 text-white py-12">
+      <div class="container mx-auto px-4">
+        <div class="grid md:grid-cols-4 gap-8 mb-8">
+          <div>
+            <h3 class="text-xl font-bold mb-4">Tentang Kami</h3>
+            <p class="text-gray-400">
+              SMP Negeri XX Kaur adalah sekolah unggulan di Kabupaten Kaur yang
+              berkomitmen untuk memberikan pendidikan berkualitas dan membentuk
+              generasi cerdas berkarakter.
+            </p>
+          </div>
+
+          <div>
+            <h3 class="text-xl font-bold mb-4">Tautan Cepat</h3>
+            <ul class="space-y-2">
+              <li>
+                <a href="#" class="text-gray-400 hover:text-white">Beranda</a>
+              </li>
+              <li>
+                <a href="#" class="text-gray-400 hover:text-white"
+                  >Profil Sekolah</a
+                >
+              </li>
+              <li>
+                <a href="#" class="text-gray-400 hover:text-white"
+                  >Guru & Staff</a
+                >
+              </li>
+              <li>
+                <a href="#" class="text-gray-400 hover:text-white">Kurikulum</a>
+              </li>
+              <li>
+                <a href="#" class="text-gray-400 hover:text-white">PPDB</a>
+              </li>
+            </ul>
+          </div>
+
+          <div>
+            <h3 class="text-xl font-bold mb-4">Kontak</h3>
+            <address class="not-italic space-y-2">
+              <p class="text-gray-400">Jl. Pendidikan No., Kaur Selatan</p>
+              <p class="text-gray-400">Kabupaten Kaur, Bengkulu 38963</p>
+              <p class="text-gray-400">Email: info@smpnkaur.sch.id</p>
+              <p class="text-gray-400">Telp: (0739) 1234567</p>
+            </address>
+          </div>
+
+          <div>
+            <h3 class="text-xl font-bold mb-4">Newsletter</h3>
+            <p class="text-gray-400 mb-4">
+              Dapatkan informasi terbaru tentang kegiatan sekolah langsung ke
+              email Anda.
+            </p>
+            <div class="flex">
+              <input
+                type="email"
+                placeholder="Alamat email"
+                class="px-4 py-2 rounded-l-lg w-full bg-gray-800 text-white focus:outline-none"
+              />
+              <button
+                class="bg-primary px-4 py-2 rounded-r-lg hover:bg-blue-700 transition"
+              >
+                <i class="fas fa-paper-plane"></i>
+              </button>
+            </div>
+          </div>
+        </div>
+
+        <div class="pt-6 border-t border-gray-800 text-center text-gray-400">
+          <p class="text-gray-500 text-xs mt-3">
+            © 2023 SMPN 22 Kaur. Seluruh hak cipta dilindungi.
+          </p>
+        </div>
+      </div>
+    </footer>
+
+    <script>
+      // Mobile menu toggle
+      document
+        .querySelector("header button")
+        .addEventListener("click", function () {
+          const menu = document.getElementById("mobile-menu");
+          menu.classList.toggle("hidden");
+        });
+      // Calendar functionality
+      function generateCalendar(month, year) {
+        const firstDay = new Date(year, month, 1);
+        const daysInMonth = new Date(year, month + 1, 0).getDate();
+        const startingDay = firstDay.getDay();
+
+        const days = ["M", "S", "S", "R", "K", "J", "S"];
+        let calendarHTML = "";
+
+        // Day names row
+        calendarHTML += `<div class="grid grid-cols-7 gap-1 mb-2 text-center text-sm">`;
+        days.forEach((day) => {
+          calendarHTML += `<div class="font-medium text-gray-500">${day}</div>`;
+        });
+        calendarHTML += `</div>`;
+
+        // Calendar dates
+        calendarHTML += `<div class="grid grid-cols-7 gap-1 text-center" id="calendar-dates">`;
+
+        // Empty cells for days before 1st
+        for (let i = 0; i < startingDay; i++) {
+          const prevMonthLastDay = new Date(year, month, 0).getDate();
+          calendarHTML += `<div class="py-2 text-gray-400">${
+            prevMonthLastDay - (startingDay - i - 1)
+          }</div>`;
+        }
+
+        // Current month days
+        for (let i = 1; i <= daysInMonth; i++) {
+          const today = new Date();
+          const activeClass =
+            i === today.getDate() &&
+            month === today.getMonth() &&
+            year === today.getFullYear()
+              ? "active font-medium bg-blue-100 rounded-full"
+              : "";
+          calendarHTML += `<div class="py-2 ${activeClass}">${i}</div>`;
+        }
+
+        // Empty cells for days after last day
+        const totalCells = Math.ceil((daysInMonth + startingDay) / 7) * 7;
+        const remainingCells = totalCells - (daysInMonth + startingDay);
+        for (let i = 1; i <= remainingCells; i++) {
+          calendarHTML += `<div class="py-2 text-gray-400">${i}</div>`;
+        }
+
+        calendarHTML += `</div>`;
+        return calendarHTML;
+      }
+
+      // Simple slider functionality for announcements
+      document.addEventListener("DOMContentLoaded", function () {
+        const slider = document.querySelector(".announcement-slider");
+        const prevBtn = document.querySelector(".announcement-prev");
+        const nextBtn = document.querySelector(".announcement-next");
+
+        // Initialize calendar
+        const today = new Date();
+        const calendarElement = document.querySelector(
+          "#calendar-dates-container"
+        );
+        if (calendarElement) {
+          calendarElement.innerHTML = generateCalendar(
+            today.getMonth(),
+            today.getFullYear()
+          );
+
+          // Update month/year display
+          const monthNames = [
+            "Januari",
+            "Februari",
+            "Maret",
+            "April",
+            "Mei",
+            "Juni",
+            "Juli",
+            "Agustus",
+            "September",
+            "Oktober",
+            "November",
+            "Desember",
+          ];
+          document.querySelector("#current-month").textContent = `${
+            monthNames[today.getMonth()]
+          } ${today.getFullYear()}`;
+        }
+
+        // Slider controls
+        nextBtn.addEventListener("click", () => {
+          slider.scrollBy({ left: 300, behavior: "smooth" });
+        });
+
+        prevBtn.addEventListener("click", () => {
+          slider.scrollBy({ left: -300, behavior: "smooth" });
+        });
+      });
+    </script>
+  </body>
+</html>

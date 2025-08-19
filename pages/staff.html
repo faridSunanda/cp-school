@@ -1,0 +1,638 @@
+<!DOCTYPE html>
+<html lang="id">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Guru & Staf - SMPN 22 Kaur</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css"
+    />
+    <script>
+      tailwind.config = {
+        theme: {
+          extend: {
+            colors: {
+              primary: "#2563eb",
+              secondary: "#1e40af",
+              accent: "#3b82f6",
+            },
+          },
+        },
+      };
+    </script>
+    <style>
+      @import url("https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap");
+
+      body {
+        font-family: "Poppins", sans-serif;
+        scroll-behavior: smooth;
+      }
+      .header-sticky {
+        position: sticky;
+        top: 0;
+        z-index: 50;
+        transition: all 0.3s ease;
+      }
+      .teacher-card:hover {
+        transform: translateY(-5px);
+        box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+      }
+      .filter-button.active {
+        background-color: #3b82f6;
+        color: white;
+      }
+      .hero-gradient {
+        background: linear-gradient(135deg, #1e3a8a 0%, #2563eb 100%);
+      }
+      .gradient-bg {
+        background: linear-gradient(135deg, #2563eb 0%, #1e40af 100%);
+      }
+      .menu-item:hover .menu-dropdown {
+        opacity: 1;
+        visibility: visible;
+        transform: translateY(0);
+      }
+      .news-card:hover {
+        transform: translateY(-5px);
+        box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+      }
+    </style>
+  </head>
+  <body class="bg-gray-50">
+    <!-- Header -->
+    <header class="header-sticky bg-white shadow-md">
+      <div
+        class="container mx-auto px-4 py-3 flex justify-between items-center"
+      >
+        <div class="flex items-center space-x-3">
+          <div class="w-16 h-16 rounded-lg flex items-center justify-center">
+            <img
+              src="/image/logo.png"
+              alt="Logo SMP Negeri XX Kaur - Perisai dengan motif khas Bengkulu dan tulisan SMP Negeri XX Kaur"
+              class="w-12 h-12 object-contain"
+            />
+          </div>
+          <div>
+            <h1 class="font-bold text-xl text-gray-800">SMP Negeri XX Kaur</h1>
+            <p class="text-sm text-gray-600">Sekolah Unggulan Berkualitas</p>
+          </div>
+        </div>
+
+        <nav class="hidden md:block">
+          <ul class="flex space-x-6">
+            <li class="relative menu-item">
+              <a
+                href="/"
+                class="text-gray-800 hover:text-primary font-medium py-2"
+              >
+                Beranda</a
+              >
+            </li>
+            <li class="relative menu-item">
+              <a
+                href="profil.html"
+                class="text-gray-800 hover:text-primary font-medium py-2"
+                >Profil <i class="fa-solid fa-angle-down text-sm"></i
+              ></a>
+              <div
+                class="menu-dropdown absolute left-0 mt-2 w-48 bg-white rounded-md shadow-lg opacity-0 invisible transform -translate-y-2 transition-all duration-300"
+              >
+                <div class="py-1">
+                  <a
+                    href="profil.html#visi-misi"
+                    class="block px-4 py-2 text-gray-700 hover:bg-gray-100"
+                    >Visi & Misi</a
+                  >
+                  <a
+                    href="profil.html#sejarah"
+                    class="block px-4 py-2 text-gray-700 hover:bg-gray-100"
+                    >Sejarah</a
+                  >
+                </div>
+              </div>
+            </li>
+            <li class="relative menu-item">
+              <a
+                href="staff.html"
+                class="text-gray-800 hover:text-primary font-medium py-2"
+                >Guru & Staff</a
+              >
+            </li>
+            <li class="relative menu-item">
+              <a
+                href="curriculum.html"
+                class="text-gray-800 hover:text-primary font-medium py-2"
+                >Kurikulum</a
+              >
+            </li>
+            <li class="relative menu-item">
+              <a
+                href="news.html"
+                class="text-gray-800 hover:text-primary font-medium py-2"
+                >Berita</a
+              >
+            </li>
+            <li class="relative menu-item">
+              <a
+                href="gallery.html"
+                class="text-gray-800 hover:text-primary font-medium py-2"
+                >Galeri</a
+              >
+            </li>
+            <li class="relative menu-item">
+              <a
+                href="ppdb.html"
+                class="text-gray-800 hover:text-primary font-medium py-2"
+                >PPDB</a
+              >
+            </li>
+            <li class="relative menu-item">
+              <a
+                href="contact.html"
+                class="text-gray-800 hover:text-primary font-medium py-2"
+                >Kontak</a
+              >
+            </li>
+          </ul>
+        </nav>
+
+        <button class="md:hidden text-gray-600">
+          <i class="fas fa-bars text-2xl"></i>
+        </button>
+      </div>
+    </header>
+
+    <!-- Mobile Menu -->
+    <div id="mobile-menu" class="md:hidden hidden bg-white shadow-lg">
+      <div class="container mx-auto px-4 py-3">
+        <ul class="space-y-3">
+          <li><a href="/" class="block py-2 text-gray-800">Beranda</a></li>
+          <li>
+            <a href="profil.html" class="block py-2 text-gray-800">Profil</a>
+          </li>
+          <li>
+            <a href="staff.html" class="block py-2 text-gray-800"
+              >Guru & Staff</a
+            >
+          </li>
+          <li>
+            <a href="curriculum.html" class="block py-2 text-gray-800"
+              >Kurikulum</a
+            >
+          </li>
+          <li>
+            <a href="news.html" class="block py-2 text-gray-800">Berita</a>
+          </li>
+          <li>
+            <a href="gallery.html" class="block py-2 text-gray-800">Galeri</a>
+          </li>
+          <li>
+            <a href="ppdb.html" class="block py-2 text-gray-800">PPDB</a>
+          </li>
+          <li>
+            <a href="contact.html" class="block py-2 text-gray-800">Kontak</a>
+          </li>
+        </ul>
+      </div>
+    </div>
+
+    <!-- Hero Section
+    <section
+      class="hero-gradient text-white py-20 lg:py-28 px-4 md:px-6 lg:px-8"
+    >
+      <div class="max-w-6xl mx-auto text-center">
+        <h1 class="text-4xl md:text-5xl lg:text-6xl font-bold mb-6">
+          Guru & Staf SMPN 22 Kaur
+        </h1>
+        <div class="w-24 h-1.5 bg-yellow-400 mx-auto mb-8"></div>
+        <p class="text-lg md:text-xl max-w-3xl mx-auto">
+          Tim profesional yang berdedikasi untuk membimbing siswa mencapai
+          potensi terbaik mereka
+        </p>
+      </div>
+    </section> -->
+
+    <!-- Breadcrumb -->
+    <div class="bg-gray-100 py-3 px-6">
+      <div class="max-w-6xl mx-auto flex items-center space-x-2 text-sm">
+        <a href="/" class="text-blue-600 hover:underline">Beranda</a>
+        <span>/</span>
+        <span class="text-gray-600">Staff & Guru Sekolah</span>
+      </div>
+    </div>
+
+    <!-- Content Section -->
+    <section class="py-12 md:py-16">
+      <div class="container mx-auto px-4">
+        <!-- Search and Filter -->
+        <div class="mb-10">
+          <div class="flex flex-col md:flex-row gap-4 mb-6">
+            <input
+              type="text"
+              id="searchInput"
+              placeholder="Cari nama guru/staf..."
+              class="flex-grow p-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-blue-500"
+            />
+            <select
+              id="subjectFilter"
+              class="p-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-blue-500"
+            >
+              <option value="">Semua Bidang</option>
+              <option value="Matematika">Matematika</option>
+              <option value="IPA">IPA</option>
+              <option value="IPS">IPS</option>
+              <option value="Bahasa Indonesia">Bahasa Indonesia</option>
+              <option value="Bahasa Inggris">Bahasa Inggris</option>
+              <option value="PJOK">PJOK</option>
+              <option value="Seni Budaya">Seni Budaya</option>
+              <option value="Agama">Agama</option>
+              <option value="BK">Bimbingan Konseling</option>
+              <option value="Administrasi">Administrasi</option>
+            </select>
+          </div>
+
+          <div class="flex flex-wrap gap-2 mb-6">
+            <button
+              class="filter-button px-4 py-2 rounded-full border border-blue-500 text-blue-500 hover:bg-blue-50 transition"
+              data-filter="all"
+            >
+              Semua
+            </button>
+            <button
+              class="filter-button px-4 py-2 rounded-full border border-blue-500 text-blue-500 hover:bg-blue-50 transition"
+              data-filter="guru"
+            >
+              Guru
+            </button>
+            <button
+              class="filter-button px-4 py-2 rounded-full border border-blue-500 text-blue-500 hover:bg-blue-50 transition"
+              data-filter="staf"
+            >
+              Staf
+            </button>
+          </div>
+        </div>
+
+        <!-- Teachers & Staff Grid -->
+        <div
+          id="teacherContainer"
+          class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6"
+        >
+          <!-- Guru Bidang Studi -->
+          <div
+            class="teacher-card bg-white rounded-lg overflow-hidden shadow-md transition duration-300 border border-gray-100"
+            data-category="guru"
+            data-subject="Matematika"
+          >
+            <div class="p-4 flex flex-col items-center">
+              <div
+                class="w-32 h-32 rounded-full overflow-hidden border-4 border-blue-100 mb-4"
+              >
+                <img
+                  src="https://storage.googleapis.com/workspace-0f70711f-8b4e-4d94-86f1-2a93ccde5887/image/a14dded4-35a3-4484-9a52-af08c6a57e22.png"
+                  alt="Guru Matematika SMPN 22 Kaur dengan senyum ramah, mengenakan kemeja formal dan kacamata"
+                  class="w-full h-full object-cover"
+                />
+              </div>
+              <h3 class="text-xl font-semibold text-gray-800">
+                Dr. Ahmad Supriyadi, M.Pd
+              </h3>
+              <p class="text-blue-600 font-medium">Guru Matematika</p>
+              <p class="text-gray-500 text-sm mt-1">Matematika</p>
+            </div>
+          </div>
+
+          <div
+            class="teacher-card bg-white rounded-lg overflow-hidden shadow-md transition duration-300 border border-gray-100"
+            data-category="guru"
+            data-subject="IPA"
+          >
+            <div class="p-4 flex flex-col items-center">
+              <div
+                class="w-32 h-32 rounded-full overflow-hidden border-4 border-blue-100 mb-4"
+              >
+                <img
+                  src="https://storage.googleapis.com/workspace-0f70711f-8b4e-4d94-86f1-2a93ccde5887/image/caa10795-acc6-4993-a9c3-6d3e6c5e2eb9.png"
+                  alt="Guru IPA wanita berhijab dengan ekspresi ceria, berdiri di depan laboratorium"
+                  class="w-full h-full object-cover"
+                />
+              </div>
+              <h3 class="text-xl font-semibold text-gray-800">
+                Nurul Hikmah, S.Pd
+              </h3>
+              <p class="text-blue-600 font-medium">Guru IPA</p>
+              <p class="text-gray-500 text-sm mt-1">IPA</p>
+            </div>
+          </div>
+
+          <div
+            class="teacher-card bg-white rounded-lg overflow-hidden shadow-md transition duration-300 border border-gray-100"
+            data-category="guru"
+            data-subject="Bahasa Indonesia"
+          >
+            <div class="p-4 flex flex-col items-center">
+              <div
+                class="w-32 h-32 rounded-full overflow-hidden border-4 border-blue-100 mb-4"
+              >
+                <img
+                  src="https://storage.googleapis.com/workspace-0f70711f-8b4e-4d94-86f1-2a93ccde5887/image/8283b1c7-30b9-4d68-a1e3-2c69b9483e28.png"
+                  alt="Guru Bahasa Indonesia pria berusia matang dengan raut wajah bijaksana, memegang buku"
+                  class="w-full h-full object-cover"
+                />
+              </div>
+              <h3 class="text-xl font-semibold text-gray-800">
+                Budi Santoso, S.Pd
+              </h3>
+              <p class="text-blue-600 font-medium">Guru Bahasa Indonesia</p>
+              <p class="text-gray-500 text-sm mt-1">Bahasa Indonesia</p>
+            </div>
+          </div>
+
+          <div
+            class="teacher-card bg-white rounded-lg overflow-hidden shadow-md transition duration-300 border border-gray-100"
+            data-category="guru"
+            data-subject="Bahasa Inggris"
+          >
+            <div class="p-4 flex flex-col items-center">
+              <div
+                class="w-32 h-32 rounded-full overflow-hidden border-4 border-blue-100 mb-4"
+              >
+                <img
+                  src="https://storage.googleapis.com/workspace-0f70711f-8b4e-4d94-86f1-2a93ccde5887/image/5d67502d-770b-47b5-8ff6-4084c41441fd.png"
+                  alt="Guru muda Bahasa Inggris berhijab dengan gaya modern, menunjukkan thumb up"
+                  class="w-full h-full object-cover"
+                />
+              </div>
+              <h3 class="text-xl font-semibold text-gray-800">
+                Dewi Anggraeni, M.Pd
+              </h3>
+              <p class="text-blue-600 font-medium">Guru Bahasa Inggris</p>
+              <p class="text-gray-500 text-sm mt-1">Bahasa Inggris</p>
+            </div>
+          </div>
+
+          <div
+            class="teacher-card bg-white rounded-lg overflow-hidden shadow-md transition duration-300 border border-gray-100"
+            data-category="guru"
+            data-subject="PJOK"
+          >
+            <div class="p-4 flex flex-col items-center">
+              <div
+                class="w-32 h-32 rounded-full overflow-hidden border-4 border-blue-100 mb-4"
+              >
+                <img
+                  src="https://storage.googleapis.com/workspace-0f70711f-8b4e-4d94-86f1-2a93ccde5887/image/ee7d8f5d-f043-462d-ae96-fa8be1afcb5d.png"
+                  alt="Guru PJOK dengan postur atletis mengenakan jersey olahraga, memegang bola basket"
+                  class="w-full h-full object-cover"
+                />
+              </div>
+              <h3 class="text-xl font-semibold text-gray-800">
+                Rudi Hermawan, S.Pd
+              </h3>
+              <p class="text-blue-600 font-medium">Guru PJOK</p>
+              <p class="text-gray-500 text-sm mt-1">PJOK</p>
+            </div>
+          </div>
+
+          <div
+            class="teacher-card bg-white rounded-lg overflow-hidden shadow-md transition duration-300 border border-gray-100"
+            data-category="guru"
+            data-subject="Seni Budaya"
+          >
+            <div class="p-4 flex flex-col items-center">
+              <div
+                class="w-32 h-32 rounded-full overflow-hidden border-4 border-blue-100 mb-4"
+              >
+                <img
+                  src="https://storage.googleapis.com/workspace-0f70711f-8b4e-4d94-86f1-2a93ccde5887/image/7000fe1d-6a8d-480f-a862-43c5921702b0.png"
+                  alt="Guru Seni Budaya wanita dengan ramah, memegang kuas cat dan palet warna"
+                  class="w-full h-full object-cover"
+                />
+              </div>
+              <h3 class="text-xl font-semibold text-gray-800">
+                Siti Rahayu, S.Sn
+              </h3>
+              <p class="text-blue-600 font-medium">Guru Seni Budaya</p>
+              <p class="text-gray-500 text-sm mt-1">Seni Budaya</p>
+            </div>
+          </div>
+
+          <!-- Staf -->
+          <div
+            class="teacher-card bg-white rounded-lg overflow-hidden shadow-md transition duration-300 border border-gray-100"
+            data-category="staf"
+            data-subject="Administrasi"
+          >
+            <div class="p-4 flex flex-col items-center">
+              <div
+                class="w-32 h-32 rounded-full overflow-hidden border-4 border-blue-100 mb-4"
+              >
+                <img
+                  src="https://storage.googleapis.com/workspace-0f70711f-8b4e-4d94-86f1-2a93ccde5887/image/004612b1-7080-4f64-9f71-30d8f6767c32.png"
+                  alt="Staff administrasi berpengalaman dengan penampilan rapi, memegang dokumen"
+                  class="w-full h-full object-cover"
+                />
+              </div>
+              <h3 class="text-xl font-semibold text-gray-800">Suryani, S.IP</h3>
+              <p class="text-blue-600 font-medium">Kepala Tata Usaha</p>
+              <p class="text-gray-500 text-sm mt-1">Administrasi</p>
+            </div>
+          </div>
+
+          <div
+            class="teacher-card bg-white rounded-lg overflow-hidden shadow-md transition duration-300 border border-gray-100"
+            data-category="staf"
+            data-subject="BK"
+          >
+            <div class="p-4 flex flex-col items-center">
+              <div
+                class="w-32 h-32 rounded-full overflow-hidden border-4 border-blue-100 mb-4"
+              >
+                <img
+                  src="https://storage.googleapis.com/workspace-0f70711f-8b4e-4d94-86f1-2a93ccde5887/image/8e8391e9-d1cc-4c7c-ac96-ec5449f50517.png"
+                  alt="Konselor sekolah dengan penampilan profesional dan ekspresi empatik"
+                  class="w-full h-full object-cover"
+                />
+              </div>
+              <h3 class="text-xl font-semibold text-gray-800">
+                Drs. Agus Setiawan
+              </h3>
+              <p class="text-blue-600 font-medium">Guru BK</p>
+              <p class="text-gray-500 text-sm mt-1">Bimbingan Konseling</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-gray-900 text-white py-12">
+      <div class="container mx-auto px-4">
+        <div class="grid md:grid-cols-4 gap-8 mb-8">
+          <div>
+            <h3 class="text-xl font-bold mb-4">Tentang Kami</h3>
+            <p class="text-gray-400">
+              SMP Negeri XX Kaur adalah sekolah unggulan di Kabupaten Kaur yang
+              berkomitmen untuk memberikan pendidikan berkualitas dan membentuk
+              generasi cerdas berkarakter.
+            </p>
+          </div>
+
+          <div>
+            <h3 class="text-xl font-bold mb-4">Tautan Cepat</h3>
+            <ul class="space-y-2">
+              <li>
+                <a href="#" class="text-gray-400 hover:text-white">Beranda</a>
+              </li>
+              <li>
+                <a href="#" class="text-gray-400 hover:text-white"
+                  >Profil Sekolah</a
+                >
+              </li>
+              <li>
+                <a href="#" class="text-gray-400 hover:text-white"
+                  >Guru & Staff</a
+                >
+              </li>
+              <li>
+                <a href="#" class="text-gray-400 hover:text-white">Kurikulum</a>
+              </li>
+              <li>
+                <a href="#" class="text-gray-400 hover:text-white">PPDB</a>
+              </li>
+            </ul>
+          </div>
+
+          <div>
+            <h3 class="text-xl font-bold mb-4">Kontak</h3>
+            <address class="not-italic space-y-2">
+              <p class="text-gray-400">Jl. Pendidikan No., Kaur Selatan</p>
+              <p class="text-gray-400">Kabupaten Kaur, Bengkulu 38963</p>
+              <p class="text-gray-400">Email: info@smpnkaur.sch.id</p>
+              <p class="text-gray-400">Telp: (0739) 1234567</p>
+            </address>
+          </div>
+
+          <div>
+            <h3 class="text-xl font-bold mb-4">Newsletter</h3>
+            <p class="text-gray-400 mb-4">
+              Dapatkan informasi terbaru tentang kegiatan sekolah langsung ke
+              email Anda.
+            </p>
+            <div class="flex">
+              <input
+                type="email"
+                placeholder="Alamat email"
+                class="px-4 py-2 rounded-l-lg w-full bg-gray-800 text-white focus:outline-none"
+              />
+              <button
+                class="bg-primary px-4 py-2 rounded-r-lg hover:bg-blue-700 transition"
+              >
+                <i class="fas fa-paper-plane"></i>
+              </button>
+            </div>
+          </div>
+        </div>
+
+        <div class="pt-6 border-t border-gray-800 text-center text-gray-400">
+          <p class="text-gray-500 text-xs mt-3">
+            © 2023 SMPN 22 Kaur. Seluruh hak cipta dilindungi.
+          </p>
+        </div>
+      </div>
+    </footer>
+
+    <script>
+      // Filter Functionality
+      document.addEventListener("DOMContentLoaded", function () {
+        const searchInput = document.getElementById("searchInput");
+        const subjectFilter = document.getElementById("subjectFilter");
+        const filterButtons = document.querySelectorAll(".filter-button");
+        const teacherCards = document.querySelectorAll(".teacher-card");
+
+        function filterTeachers() {
+          const searchTerm = searchInput.value.toLowerCase();
+          const selectedSubject = subjectFilter.value;
+          const activeFilter =
+            document.querySelector(".filter-button.active")?.dataset.filter ||
+            "all";
+
+          teacherCards.forEach((card) => {
+            const name = card.querySelector("h3").textContent.toLowerCase();
+            const subject = card.dataset.subject;
+            const category = card.dataset.category;
+
+            const nameMatch = name.includes(searchTerm);
+            const subjectMatch = selectedSubject
+              ? subject === selectedSubject
+              : true;
+            const categoryMatch =
+              activeFilter === "all" || category === activeFilter;
+
+            if (nameMatch && subjectMatch && categoryMatch) {
+              card.style.display = "block";
+            } else {
+              card.style.display = "none";
+            }
+          });
+        }
+
+        // Event Listeners
+        searchInput.addEventListener("input", filterTeachers);
+        subjectFilter.addEventListener("change", filterTeachers);
+
+        filterButtons.forEach((button) => {
+          button.addEventListener("click", () => {
+            filterButtons.forEach((btn) => btn.classList.remove("active"));
+            button.classList.add("active");
+            filterTeachers();
+          });
+        });
+      });
+
+      // Mobile menu toggle
+      document
+        .querySelector("header button")
+        .addEventListener("click", function () {
+          const menu = document.getElementById("mobile-menu");
+          menu.classList.toggle("hidden");
+        });
+
+      // Smooth scrolling for anchor links
+      document.querySelectorAll('a[href^="#"]').forEach((anchor) => {
+        anchor.addEventListener("click", function (e) {
+          e.preventDefault();
+
+          const targetId = this.getAttribute("href");
+          if (targetId === "#") return;
+
+          const targetElement = document.querySelector(targetId);
+          if (targetElement) {
+            window.scrollTo({
+              top: targetElement.offsetTop - 80,
+              behavior: "smooth",
+            });
+
+            // Close mobile menu if open
+            const mobileMenu = document.getElementById("mobile-menu");
+            if (!mobileMenu.classList.contains("hidden")) {
+              mobileMenu.classList.add("hidden");
+            }
+          }
+        });
+      });
+
+      // Sticky header effect
+      window.addEventListener("scroll", function () {
+        const header = document.querySelector("header");
+        if (window.scrollY > 100) {
+          header.classList.add("shadow-lg");
+        } else {
+          header.classList.remove("shadow-lg");
+        }
+      });
+    </script>
+  </body>
+</html>

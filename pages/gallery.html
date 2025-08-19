@@ -1,0 +1,555 @@
+<!DOCTYPE html>
+<html lang="id">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Galeri Kegiatan - SMPN 22 Kaur</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+    />
+    <style>
+      @import url("https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap");
+
+      body {
+        font-family: "Poppins", sans-serif;
+        scroll-behavior: smooth;
+      }
+      .header-sticky {
+        position: sticky;
+        top: 0;
+        z-index: 50;
+        transition: all 0.3s ease;
+      }
+
+      .hero-gradient {
+        background: linear-gradient(135deg, #1e3a8a 0%, #2563eb 100%);
+      }
+      .gradient-bg {
+        background: linear-gradient(135deg, #2563eb 0%, #1e40af 100%);
+      }
+
+      .menu-item:hover .menu-dropdown {
+        opacity: 1;
+        visibility: visible;
+        transform: translateY(0);
+      }
+      .gallery-item {
+        transition: transform 0.3s ease, box-shadow 0.3s ease;
+      }
+      .gallery-item:hover {
+        transform: translateY(-5px);
+        box-shadow: 0 10px 20px rgba(0, 0, 0, 0.15);
+      }
+      .filter-btn {
+        transition: all 0.2s ease;
+      }
+      .filter-btn.active {
+        background-color: #3b82f6;
+        color: white;
+      }
+    </style>
+  </head>
+  <body class="bg-gray-50">
+    <!-- Header -->
+    <header class="header-sticky bg-white shadow-md">
+      <div
+        class="container mx-auto px-4 py-3 flex justify-between items-center"
+      >
+        <div class="flex items-center space-x-3">
+          <div class="w-16 h-16 rounded-lg flex items-center justify-center">
+            <img
+              src="/image/logo.png"
+              alt="Logo SMP Negeri XX Kaur - Perisai dengan motif khas Bengkulu dan tulisan SMP Negeri XX Kaur"
+              class="w-12 h-12 object-contain"
+            />
+          </div>
+          <div>
+            <h1 class="font-bold text-xl text-gray-800">SMP Negeri XX Kaur</h1>
+            <p class="text-sm text-gray-600">Sekolah Unggulan Berkualitas</p>
+          </div>
+        </div>
+
+        <nav class="hidden md:block">
+          <ul class="flex space-x-6">
+            <li class="relative menu-item">
+              <a
+                href="/"
+                class="text-gray-800 hover:text-primary font-medium py-2"
+                >Beranda</a
+              >
+            </li>
+            <li class="relative menu-item">
+              <a
+                href="profil.html"
+                class="text-gray-800 hover:text-primary font-medium py-2"
+                >Profil <i class="fa-solid fa-angle-down text-sm"></i
+              ></a>
+              <div
+                class="menu-dropdown absolute left-0 mt-2 w-48 bg-white rounded-md shadow-lg opacity-0 invisible transform -translate-y-2 transition-all duration-300"
+              >
+                <div class="py-1">
+                  <a
+                    href="profil.html#visi-misi"
+                    class="block px-4 py-2 text-gray-700 hover:bg-gray-100"
+                    >Visi & Misi</a
+                  >
+                  <a
+                    href="profil.html#sejarah"
+                    class="block px-4 py-2 text-gray-700 hover:bg-gray-100"
+                    >Sejarah</a
+                  >
+                </div>
+              </div>
+            </li>
+            <li class="relative menu-item">
+              <a
+                href="staff.html"
+                class="text-gray-800 hover:text-primary font-medium py-2"
+                >Guru & Staff</a
+              >
+            </li>
+            <li class="relative menu-item">
+              <a
+                href="curriculum.html"
+                class="text-gray-800 hover:text-primary font-medium py-2"
+                >Kurikulum</a
+              >
+            </li>
+            <li class="relative menu-item">
+              <a
+                href="news.html"
+                class="text-gray-800 hover:text-primary font-medium py-2"
+                >Berita</a
+              >
+            </li>
+            <li class="relative menu-item">
+              <a
+                href="gallery.html"
+                class="text-gray-800 hover:text-primary font-medium py-2"
+                >Galeri</a
+              >
+            </li>
+            <li class="relative menu-item">
+              <a
+                href="ppdb.html"
+                class="text-gray-800 hover:text-primary font-medium py-2"
+                >PPDB</a
+              >
+            </li>
+            <li class="relative menu-item">
+              <a
+                href="contact.html"
+                class="text-gray-800 hover:text-primary font-medium py-2"
+                >Kontak</a
+              >
+            </li>
+          </ul>
+        </nav>
+
+        <button class="md:hidden text-gray-600">
+          <i class="fas fa-bars text-2xl"></i>
+        </button>
+      </div>
+    </header>
+
+    <!-- Mobile Menu -->
+    <div id="mobile-menu" class="md:hidden hidden bg-white shadow-lg">
+      <div class="container mx-auto px-4 py-3">
+        <ul class="space-y-3">
+          <li><a href="/" class="block py-2 text-gray-800">Beranda</a></li>
+          <li>
+            <a href="profil.html" class="block py-2 text-gray-800">Profil</a>
+          </li>
+          <li>
+            <a href="staff.html" class="block py-2 text-gray-800"
+              >Guru & Staff</a
+            >
+          </li>
+          <li>
+            <a href="curriculum.html" class="block py-2 text-gray-800"
+              >Kurikulum</a
+            >
+          </li>
+          <li>
+            <a href="news.html" class="block py-2 text-gray-800">Berita</a>
+          </li>
+          <li>
+            <a href="gallery.html" class="block py-2 text-gray-800">Galeri</a>
+          </li>
+          <li>
+            <a href="ppdb.html" class="block py-2 text-gray-800">PPDB</a>
+          </li>
+          <li>
+            <a href="contact.html" class="block py-2 text-gray-800">Kontak</a>
+          </li>
+        </ul>
+      </div>
+    </div>
+
+    <!-- Hero Section
+    <section
+      class="hero-gradient text-white py-20 lg:py-28 px-4 md:px-6 lg:px-8"
+    >
+      <div class="max-w-6xl mx-auto text-center">
+        <h1 class="text-4xl md:text-5xl lg:text-6xl font-bold mb-6">
+          Galeri Kegiatan SMPN XX Kaur
+        </h1>
+        <div class="w-24 h-1.5 bg-yellow-400 mx-auto mb-8"></div>
+        <p class="text-lg md:text-xl max-w-3xl mx-auto">
+          Mengabadikan Momen Berharga Di Kegiatan SMP Negeri XX Kaur
+        </p>
+      </div>
+    </section> -->
+
+    <!-- Breadcrumb -->
+    <div class="bg-gray-100 py-3 px-6">
+      <div class="max-w-6xl mx-auto flex items-center space-x-2 text-sm">
+        <a href="/" class="text-blue-600 hover:underline">Beranda</a>
+        <span>/</span>
+        <span class="text-gray-600">Galeri Sekolah</span>
+      </div>
+    </div>
+
+    <!-- Filter Section -->
+    <div class="container mx-auto px-6 py-8">
+      <div class="flex flex-wrap justify-center gap-3 mb-12">
+        <button
+          class="filter-btn px-6 py-2 rounded-full bg-gray-100 hover:bg-blue-100 active"
+          data-filter="all"
+        >
+          Semua
+        </button>
+        <button
+          class="filter-btn px-6 py-2 rounded-full bg-gray-100 hover:bg-blue-100"
+          data-filter="upacara"
+        >
+          Upacara
+        </button>
+        <button
+          class="filter-btn px-6 py-2 rounded-full bg-gray-100 hover:bg-blue-100"
+          data-filter="lomba"
+        >
+          Lomba
+        </button>
+        <button
+          class="filter-btn px-6 py-2 rounded-full bg-gray-100 hover:bg-blue-100"
+          data-filter="ekstrakurikuler"
+        >
+          Ekstrakurikuler
+        </button>
+        <button
+          class="filter-btn px-6 py-2 rounded-full bg-gray-100 hover:bg-blue-100"
+          data-filter="pramuka"
+        >
+          Pramuka
+        </button>
+        <button
+          class="filter-btn px-6 py-2 rounded-full bg-gray-100 hover:bg-blue-100"
+          data-filter="wisuda"
+        >
+          Wisuda
+        </button>
+      </div>
+    </div>
+
+    <!-- Gallery Grid -->
+    <div class="container mx-auto px-6 pb-16">
+      <div
+        class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6"
+        id="gallery-container"
+      >
+        <!-- Upacara Items -->
+        <div
+          class="gallery-item bg-white rounded-lg overflow-hidden shadow-md"
+          data-category="upacara"
+        >
+          <img
+            src="https://storage.googleapis.com/workspace-0f70711f-8b4e-4d94-86f1-2a93ccde5887/image/9ca78cfb-a333-4af9-a89d-70710a09be9a.png"
+            alt="Siswa SMPN 22 Kaur berbaris rapi saat upacara bendera di lapangan sekolah dengan seragam lengkap"
+            class="w-full h-64 object-cover"
+          />
+          <div class="p-4">
+            <h3 class="font-bold text-lg mb-2">Upacara Bendera Mingguan</h3>
+            <p class="text-gray-600">
+              Upacara bendera setiap Senin pagi dengan peserta seluruh siswa dan
+              guru SMPN 22 Kaur
+            </p>
+          </div>
+        </div>
+
+        <!-- Lomba Items -->
+        <div
+          class="gallery-item bg-white rounded-lg overflow-hidden shadow-md"
+          data-category="lomba"
+        >
+          <img
+            src="https://storage.googleapis.com/workspace-0f70711f-8b4e-4d94-86f1-2a93ccde5887/image/11a6e55b-4d06-4400-a8fe-87f5f1492d0d.png"
+            alt="Siswa SMPN 22 Kaur sedang presentasi di lomba karya ilmiah remaja dengan latar belakang papan karya"
+            class="w-full h-64 object-cover"
+          />
+          <div class="p-4">
+            <h3 class="font-bold text-lg mb-2">Lomba Karya Ilmiah Remaja</h3>
+            <p class="text-gray-600">
+              Perwakilan siswa SMPN 22 Kaur mengikuti kompetisi tingkat
+              kabupaten
+            </p>
+          </div>
+        </div>
+
+        <!-- Ekstrakurikuler Items -->
+        <div
+          class="gallery-item bg-white rounded-lg overflow-hidden shadow-md"
+          data-category="ekstrakurikuler"
+        >
+          <img
+            src="../image/galeri3.jpg"
+            alt="Kelompok musik sekolah SMPN 22 Kaur sedang latihan di aula dengan berbagai alat musik tradisional"
+            class="w-full h-64 object-cover"
+          />
+          <div class="p-4">
+            <h3 class="font-bold text-lg mb-2">
+              Latihan Ekstrakurikuler Musik
+            </h3>
+            <p class="text-gray-600">
+              Siswa berlatih musik tradisional untuk persiapan pentas seni
+              sekolah
+            </p>
+          </div>
+        </div>
+
+        <!-- Pramuka Items -->
+        <div
+          class="gallery-item bg-white rounded-lg overflow-hidden shadow-md"
+          data-category="pramuka"
+        >
+          <img
+            src="https://storage.googleapis.com/workspace-0f70711f-8b4e-4d94-86f1-2a93ccde5887/image/58febf62-2c5c-4baa-ade7-aa974a5f36bc.png"
+            alt="Kegiatan perkemahan pramuka SMPN 22 Kaur di alam terbuka dengan tenda warna-warni"
+            class="w-full h-64 object-cover"
+          />
+          <div class="p-4">
+            <h3 class="font-bold text-lg mb-2">Perkemahan Jumat-Sabtu</h3>
+            <p class="text-gray-600">
+              Kegiatan tahunan pramuka SMPN 22 Kaur di area perkemahan
+            </p>
+          </div>
+        </div>
+
+        <!-- Wisuda Items -->
+        <div
+          class="gallery-item bg-white rounded-lg overflow-hidden shadow-md"
+          data-category="wisuda"
+        >
+          <img
+            src="../image/galeri.jpg"
+            alt="Wisuda kelulusan siswa SMPN 22 Kaur dengan pemakaian toga dan latar belakang panggung biru"
+            class="w-full h-64 object-cover"
+          />
+          <div class="p-4">
+            <h3 class="font-bold text-lg mb-2">Wisuda Kelas IX</h3>
+            <p class="text-gray-600">
+              Acara pelepasan siswa kelas IX angkatan 2023 dengan berbagai
+              penampilan spesial
+            </p>
+          </div>
+        </div>
+
+        <!-- Ekstrakurikuler Items -->
+        <div
+          class="gallery-item bg-white rounded-lg overflow-hidden shadow-md"
+          data-category="ekstrakurikuler"
+        >
+          <img
+            src="https://storage.googleapis.com/workspace-0f70711f-8b4e-4d94-86f1-2a93ccde5887/image/14034a0c-4f98-40bb-a4b4-9ba728a7f16e.png"
+            alt="Tim futsal SMPN 22 Kaur sedang bertanding di lapangan sekolah dengan jersey seragam merah"
+            class="w-full h-64 object-cover"
+          />
+          <div class="p-4">
+            <h3 class="font-bold text-lg mb-2">
+              Pertandingan Futsal Antar Kelas
+            </h3>
+            <p class="text-gray-600">
+              Kompetisi futsal tahunan antar kelas dengan semangat sportivitas
+              tinggi
+            </p>
+          </div>
+        </div>
+
+        <!-- Upacara Items -->
+        <div
+          class="gallery-item bg-white rounded-lg overflow-hidden shadow-md"
+          data-category="upacara"
+        >
+          <img
+            src="../image/galeri7.jpeg"
+            alt="Upacara Hari Pahlawan dengan petugas upacara menggunakan kostum pejuang dan latar belakang bendera merah putih"
+            class="w-full h-64 object-cover"
+          />
+          <div class="p-4">
+            <h3 class="font-bold text-lg mb-2">Upacara Hari Pahlawan</h3>
+            <p class="text-gray-600">
+              Perayaan hari pahlawan dengan kostum khusus dan drama kolosal
+            </p>
+          </div>
+        </div>
+
+        <!-- Lomba Items -->
+        <div
+          class="gallery-item bg-white rounded-lg overflow-hidden shadow-md"
+          data-category="lomba"
+        >
+          <img
+            src="https://storage.googleapis.com/workspace-0f70711f-8b4e-4d94-86f1-2a93ccde5887/image/72925277-2fa5-40f0-92d8-7ba6db386c0d.png"
+            alt="Lomba mewarnai tingkat sekolah dengan peserta siswa kelas VII di aula sekolah penuh karya warna-warni"
+            class="w-full h-64 object-cover"
+          />
+          <div class="p-4">
+            <h3 class="font-bold text-lg mb-2">
+              Lomba Mewarnai Tingkat Sekolah
+            </h3>
+            <p class="text-gray-600">
+              Kompetisi kreativitas siswa dalam rangka memperingati hari
+              pendidikan
+            </p>
+          </div>
+        </div>
+
+        <!-- Pramuka Items -->
+        <div
+          class="gallery-item bg-white rounded-lg overflow-hidden shadow-md"
+          data-category="pramuka"
+        >
+          <img
+            src="../image/galeri7.jpeg"
+            alt="Kegiatan pionering pramuka SMPN 22 Kaur membangun struktur dari tongkat dan tali di lapangan sekolah"
+            class="w-full h-64 object-cover"
+          />
+          <div class="p-4">
+            <h3 class="font-bold text-lg mb-2">Pelatihan Pionering Pramuka</h3>
+            <p class="text-gray-600">
+              Siswa belajar teknik pionering dasar untuk mengasah keterampilan
+              kepramukaan
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="bg-gray-900 text-white py-12">
+      <div class="container mx-auto px-4">
+        <div class="grid md:grid-cols-4 gap-8 mb-8">
+          <div>
+            <h3 class="text-xl font-bold mb-4">Tentang Kami</h3>
+            <p class="text-gray-400">
+              SMP Negeri XX Kaur adalah sekolah unggulan di Kabupaten Kaur yang
+              berkomitmen untuk memberikan pendidikan berkualitas dan membentuk
+              generasi cerdas berkarakter.
+            </p>
+          </div>
+
+          <div>
+            <h3 class="text-xl font-bold mb-4">Tautan Cepat</h3>
+            <ul class="space-y-2">
+              <li>
+                <a href="#" class="text-gray-400 hover:text-white">Beranda</a>
+              </li>
+              <li>
+                <a href="#" class="text-gray-400 hover:text-white"
+                  >Profil Sekolah</a
+                >
+              </li>
+              <li>
+                <a href="#" class="text-gray-400 hover:text-white"
+                  >Guru & Staff</a
+                >
+              </li>
+              <li>
+                <a href="#" class="text-gray-400 hover:text-white">Kurikulum</a>
+              </li>
+              <li>
+                <a href="#" class="text-gray-400 hover:text-white">PPDB</a>
+              </li>
+            </ul>
+          </div>
+
+          <div>
+            <h3 class="text-xl font-bold mb-4">Kontak</h3>
+            <address class="not-italic space-y-2">
+              <p class="text-gray-400">Jl. Pendidikan No., Kaur Selatan</p>
+              <p class="text-gray-400">Kabupaten Kaur, Bengkulu 38963</p>
+              <p class="text-gray-400">Email: info@smpnkaur.sch.id</p>
+              <p class="text-gray-400">Telp: (0739) 1234567</p>
+            </address>
+          </div>
+
+          <div>
+            <h3 class="text-xl font-bold mb-4">Newsletter</h3>
+            <p class="text-gray-400 mb-4">
+              Dapatkan informasi terbaru tentang kegiatan sekolah langsung ke
+              email Anda.
+            </p>
+            <div class="flex">
+              <input
+                type="email"
+                placeholder="Alamat email"
+                class="px-4 py-2 rounded-l-lg w-full bg-gray-800 text-white focus:outline-none"
+              />
+              <button
+                class="bg-primary px-4 py-2 rounded-r-lg hover:bg-blue-700 transition"
+              >
+                <i class="fas fa-paper-plane"></i>
+              </button>
+            </div>
+          </div>
+        </div>
+
+        <div class="pt-6 border-t border-gray-800 text-center text-gray-400">
+          <p class="text-gray-500 text-xs mt-3">
+            © 2023 SMPN 22 Kaur. Seluruh hak cipta dilindungi.
+          </p>
+        </div>
+      </div>
+    </footer>
+
+    <script>
+      // Mobile menu toggle
+      document
+        .querySelector("header button")
+        .addEventListener("click", function () {
+          const menu = document.getElementById("mobile-menu");
+          menu.classList.toggle("hidden");
+        });
+      // Filter Function
+      document.addEventListener("DOMContentLoaded", function () {
+        const filterBtns = document.querySelectorAll(".filter-btn");
+        const galleryItems = document.querySelectorAll(".gallery-item");
+
+        filterBtns.forEach((btn) => {
+          btn.addEventListener("click", function () {
+            // Remove active class from all buttons
+            filterBtns.forEach((btn) => btn.classList.remove("active"));
+            // Add active class to clicked button
+            this.classList.add("active");
+
+            const filterValue = this.getAttribute("data-filter");
+
+            galleryItems.forEach((item) => {
+              if (filterValue === "all") {
+                item.style.display = "block";
+              } else {
+                if (item.getAttribute("data-category") === filterValue) {
+                  item.style.display = "block";
+                } else {
+                  item.style.display = "none";
+                }
+              }
+            });
+          });
+        });
+      });
+    </script>
+  </body>
+</html>

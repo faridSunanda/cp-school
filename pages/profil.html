@@ -1,0 +1,641 @@
+<!DOCTYPE html>
+<html lang="id">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Profil Sekolah - SMPN 22 Kaur</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css"
+    />
+    <script>
+      tailwind.config = {
+        theme: {
+          extend: {
+            colors: {
+              primary: "#2563eb",
+              secondary: "#1e40af",
+              accent: "#3b82f6",
+            },
+          },
+        },
+      };
+    </script>
+    <style>
+      @import url("https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap");
+
+      body {
+        font-family: "Poppins", sans-serif;
+        scroll-behavior: smooth;
+      }
+      .header-sticky {
+        position: sticky;
+        top: 0;
+        z-index: 50;
+        transition: all 0.3s ease;
+      }
+      .hero-gradient {
+        background: linear-gradient(135deg, #1e3a8a 0%, #2563eb 100%);
+      }
+      .gradient-bg {
+        background: linear-gradient(135deg, #2563eb 0%, #1e40af 100%);
+      }
+      .menu-item:hover .menu-dropdown {
+        opacity: 1;
+        visibility: visible;
+        transform: translateY(0);
+      }
+      .news-card:hover {
+        transform: translateY(-5px);
+        box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+      }
+      @keyframes fadeIn {
+        from {
+          opacity: 0;
+          transform: translateY(20px);
+        }
+        to {
+          opacity: 1;
+          transform: translateY(0);
+        }
+      }
+      .animate-fade-in {
+        animation: fadeIn 0.8s ease-out forwards;
+      }
+    </style>
+  </head>
+  <body class="bg-gray-50">
+    <!-- Header -->
+    <header class="header-sticky bg-white shadow-md">
+      <div
+        class="container mx-auto px-4 py-3 flex justify-between items-center"
+      >
+        <div class="flex items-center space-x-3">
+          <div class="w-16 h-16 rounded-lg flex items-center justify-center">
+            <img
+              src="/image/logo.png"
+              alt="Logo SMP Negeri XX Kaur - Perisai dengan motif khas Bengkulu dan tulisan SMP Negeri XX Kaur"
+              class="w-12 h-12 object-contain"
+            />
+          </div>
+          <div>
+            <h1 class="font-bold text-xl text-gray-800">SMP Negeri XX Kaur</h1>
+            <p class="text-sm text-gray-600">Sekolah Unggulan Berkualitas</p>
+          </div>
+        </div>
+
+        <nav class="hidden md:block">
+          <ul class="flex space-x-6">
+            <li class="relative menu-item">
+              <a
+                href="../"
+                class="text-gray-800 hover:text-primary font-medium py-2"
+                >Beranda</a
+              >
+            </li>
+            <li class="relative menu-item">
+              <a
+                href="profil.html"
+                class="text-gray-800 hover:text-primary font-medium py-2"
+                >Profil <i class="fa-solid fa-angle-down text-sm"></i
+              ></a>
+              <div
+                class="menu-dropdown absolute left-0 mt-2 w-48 bg-white rounded-md shadow-lg opacity-0 invisible transform -translate-y-2 transition-all duration-300"
+              >
+                <div class="py-1">
+                  <a
+                    href="profil.html#visi-misi"
+                    class="block px-4 py-2 text-gray-700 hover:bg-gray-100"
+                    >Visi & Misi</a
+                  >
+                  <a
+                    href="profil.html#sejarah"
+                    class="block px-4 py-2 text-gray-700 hover:bg-gray-100"
+                    >Sejarah</a
+                  >
+                </div>
+              </div>
+            </li>
+            <li class="relative menu-item">
+              <a
+                href="staff.html"
+                class="text-gray-800 hover:text-primary font-medium py-2"
+                >Guru & Staff</a
+              >
+            </li>
+            <li class="relative menu-item">
+              <a
+                href="curriculum.html"
+                class="text-gray-800 hover:text-primary font-medium py-2"
+                >Kurikulum</a
+              >
+            </li>
+            <li class="relative menu-item">
+              <a
+                href="news.html"
+                class="text-gray-800 hover:text-primary font-medium py-2"
+                >Berita</a
+              >
+            </li>
+            <li class="relative menu-item">
+              <a
+                href="gallery.html"
+                class="text-gray-800 hover:text-primary font-medium py-2"
+                >Galeri</a
+              >
+            </li>
+            <li class="relative menu-item">
+              <a
+                href="ppdb.html"
+                class="text-gray-800 hover:text-primary font-medium py-2"
+                >PPDB</a
+              >
+            </li>
+            <li class="relative menu-item">
+              <a
+                href="contact.html"
+                class="text-gray-800 hover:text-primary font-medium py-2"
+                >Kontak</a
+              >
+            </li>
+          </ul>
+        </nav>
+
+        <button class="md:hidden text-gray-600">
+          <i class="fas fa-bars text-2xl"></i>
+        </button>
+      </div>
+    </header>
+
+    <!-- Mobile Menu -->
+    <div id="mobile-menu" class="md:hidden hidden bg-white shadow-lg">
+      <div class="container mx-auto px-4 py-3">
+        <ul class="space-y-3">
+          <li><a href="/" class="block py-2 text-gray-800">Beranda</a></li>
+          <li>
+            <a href="profil.html" class="block py-2 text-gray-800">Profil</a>
+          </li>
+          <li>
+            <a href="staff.html" class="block py-2 text-gray-800"
+              >Guru & Staff</a
+            >
+          </li>
+          <li>
+            <a href="curriculum.html" class="block py-2 text-gray-800"
+              >Kurikulum</a
+            >
+          </li>
+          <li>
+            <a href="news.html" class="block py-2 text-gray-800">Berita</a>
+          </li>
+          <li>
+            <a href="gallery.html" class="block py-2 text-gray-800">Galeri</a>
+          </li>
+          <li>
+            <a href="ppdb.html" class="block py-2 text-gray-800">PPDB</a>
+          </li>
+          <li>
+            <a href="contact.html" class="block py-2 text-gray-800">Kontak</a>
+          </li>
+        </ul>
+      </div>
+    </div>
+
+    <!-- Hero Section
+    <section
+      class="hero-gradient text-white py-20 lg:py-28 px-4 md:px-6 lg:px-8"
+    >
+      <div class="max-w-6xl mx-auto text-center">
+        <h1 class="text-4xl md:text-5xl lg:text-6xl font-bold mb-6">
+          Profil Sekolah
+        </h1>
+        <div class="w-24 h-1.5 bg-yellow-400 mx-auto mb-8"></div>
+        <p class="text-lg md:text-xl max-w-3xl mx-auto">
+          SMP Negeri XX Kaur - Menyiapkan Generasi Unggul dan Berkarakter
+        </p>
+      </div>
+    </section> -->
+
+    <!-- Breadcrumb -->
+    <div class="bg-gray-100 py-3 px-6">
+      <div class="max-w-6xl mx-auto flex items-center space-x-2 text-sm">
+        <a href="../" class="text-blue-600 hover:underline">Beranda</a>
+        <span>/</span>
+        <span class="text-gray-600">Profil Sekolah</span>
+      </div>
+    </div>
+
+    <!-- Konten Utama -->
+    <div class="container mx-auto px-6 py-12">
+      <!-- Sejarah Singkat -->
+      <section class="mb-16 animate-fade-in" style="animation-delay: 0.2s">
+        <div class="bg-white rounded-xl shadow-md overflow-hidden">
+          <div class="p-8">
+            <h2
+              class="text-3xl font-bold text-blue-800 mb-6 relative inline-block"
+            >
+              <span class="relative z-10">Sejarah Singkat</span>
+              <span
+                class="absolute bottom-0 left-0 w-full h-2 bg-blue-200 z-0"
+              ></span>
+            </h2>
+            <div class="text-gray-700 space-y-4">
+              <p>
+                SMP Negeri 22 Kaur didirikan pada tahun 1985 dengan misi untuk
+                menyediakan pendidikan berkualitas bagi masyarakat Kaur dan
+                sekitarnya. Pada awalnya sekolah ini hanya memiliki 3 ruang
+                kelas dengan 5 tenaga pengajar.
+              </p>
+              <p>
+                Seiring berjalannya waktu, SMPN 22 Kaur terus berkembang dengan
+                tambahan fasilitas dan peningkatan kualitas pengajaran. Saat ini
+                kami memiliki 24 ruang kelas, laboratorium IPA, perpustakaan,
+                dan fasilitas pendukung lainnya.
+              </p>
+              <p>
+                Banyak prestasi telah diraih oleh sekolah ini baik di tingkat
+                kabupaten maupun provinsi, terutama dalam bidang akademik dan
+                olahraga.
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Visi dan Misi -->
+      <section class="mb-16 animate-fade-in" style="animation-delay: 0.3s">
+        <div class="flex flex-col lg:flex-row gap-8">
+          <!-- Visi -->
+          <div
+            class="lg:w-1/2 bg-white rounded-xl shadow-md overflow-hidden"
+            id="visi-misi"
+          >
+            <div class="bg-blue-600 p-4">
+              <h3 class="text-2xl font-bold text-white text-center">Visi</h3>
+            </div>
+            <div class="p-8">
+              <div class="flex items-start mb-4">
+                <div class="bg-blue-100 p-3 rounded-full mr-4">
+                  <i class="fas fa-bullseye text-blue-600"></i>
+                </div>
+                <p class="text-lg font-medium text-gray-800 pt-1">
+                  "Menjadi sekolah unggulan di Kabupaten Kaur yang berkarakter,
+                  berprestasi, dan berwawasan lingkungan pada tahun 2025"
+                </p>
+              </div>
+            </div>
+          </div>
+
+          <!-- Misi -->
+          <div class="lg:w-1/2 bg-white rounded-xl shadow-md overflow-hidden">
+            <div class="bg-blue-800 p-4">
+              <h3 class="text-2xl font-bold text-white text-center">Misi</h3>
+            </div>
+            <div class="p-8">
+              <ul class="space-y-4">
+                <li class="flex items-start">
+                  <div class="bg-blue-100 p-2 rounded-full mr-4">
+                    <i class="fas fa-check text-blue-600 text-sm"></i>
+                  </div>
+                  <p class="text-gray-700">
+                    Menyelenggarakan pendidikan berkualitas untuk mengembangkan
+                    potensi peserta didik secara optimal
+                  </p>
+                </li>
+                <li class="flex items-start">
+                  <div class="bg-blue-100 p-2 rounded-full mr-4">
+                    <i class="fas fa-check text-blue-600 text-sm"></i>
+                  </div>
+                  <p class="text-gray-700">
+                    Menumbuhkan karakter yang berlandaskan nilai-nilai Pancasila
+                    dan budaya bangsa
+                  </p>
+                </li>
+                <li class="flex items-start">
+                  <div class="bg-blue-100 p-2 rounded-full mr-4">
+                    <i class="fas fa-check text-blue-600 text-sm"></i>
+                  </div>
+                  <p class="text-gray-700">
+                    Mengembangkan lingkungan sekolah yang kondusif, hijau, dan
+                    berwawasan lingkungan
+                  </p>
+                </li>
+                <li class="flex items-start">
+                  <div class="bg-blue-100 p-2 rounded-full mr-4">
+                    <i class="fas fa-check text-blue-600 text-sm"></i>
+                  </div>
+                  <p class="text-gray-700">
+                    Membangun kerjasama yang harmonis antara sekolah, orang tua,
+                    dan masyarakat
+                  </p>
+                </li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Struktur Organisasi -->
+      <section class="mb-16 animate-fade-in" style="animation-delay: 0.4s">
+        <div class="bg-white rounded-xl shadow-md overflow-hidden">
+          <div class="p-8">
+            <h2
+              class="text-3xl font-bold text-blue-800 mb-6 relative inline-block"
+            >
+              <span class="relative z-10">Struktur Organisasi</span>
+              <span
+                class="absolute bottom-0 left-0 w-full h-2 bg-blue-200 z-0"
+              ></span>
+            </h2>
+
+            <div class="mt-8">
+              <div class="flex flex-col space-y-8">
+                <!-- Level 1 - Kepala Sekolah -->
+                <div class="relative self-center">
+                  <div
+                    class="bg-blue-700 text-white p-4 rounded-lg shadow-lg w-64 text-center transform hover:scale-105 transition duration-300"
+                  >
+                    <h3 class="font-bold text-lg">Drs. Ahmad Sudrajat, M.Pd</h3>
+                    <p class="text-blue-100">Kepala Sekolah</p>
+                  </div>
+                  <div
+                    class="absolute bottom-0 left-1/2 w-px h-8 bg-gray-300 -mb-8 -translate-x-1/2"
+                  ></div>
+                </div>
+
+                <!-- Level 2 - Wakil Kepala Sekolah -->
+                <div class="flex flex-col items-center">
+                  <div class="flex flex-wrap justify-center gap-8 mb-8">
+                    <div
+                      class="bg-blue-600 text-white p-3 rounded-lg shadow-md w-56 text-center transform hover:scale-105 transition duration-300"
+                    >
+                      <h3 class="font-bold">Drs. Hasan Basri</h3>
+                      <p class="text-blue-100 text-sm">
+                        Wakil Kepala Bidang Kurikulum
+                      </p>
+                    </div>
+                    <div
+                      class="bg-blue-600 text-white p-3 rounded-lg shadow-md w-56 text-center transform hover:scale-105 transition duration-300"
+                    >
+                      <h3 class="font-bold">Siti Aminah, M.Pd</h3>
+                      <p class="text-blue-100 text-sm">
+                        Wakil Kepala Bidang Kesiswaan
+                      </p>
+                    </div>
+                    <div
+                      class="bg-blue-600 text-white p-3 rounded-lg shadow-md w-56 text-center transform hover:scale-105 transition duration-300"
+                    >
+                      <h3 class="font-bold">Beni setiawan, S.Pd</h3>
+                      <p class="text-blue-100 text-sm">
+                        Wakil Kepala Bidang Sarana
+                      </p>
+                    </div>
+                  </div>
+                </div>
+
+                <!-- Level 3 - Guru & Staff -->
+                <div class="flex flex-col items-center">
+                  <div
+                    class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6"
+                  >
+                    <div
+                      class="bg-blue-50 border border-blue-200 p-3 rounded-lg shadow-sm text-center"
+                    >
+                      <h3 class="font-bold text-blue-800">Dewan Guru</h3>
+                      <p class="text-sm text-gray-600 mt-1">32 Orang</p>
+                    </div>
+                    <div
+                      class="bg-blue-50 border border-blue-200 p-3 rounded-lg shadow-sm text-center"
+                    >
+                      <h3 class="font-bold text-blue-800">Staff TU</h3>
+                      <p class="text-sm text-gray-600 mt-1">8 Orang</p>
+                    </div>
+                    <div
+                      class="bg-blue-50 border border-blue-200 p-3 rounded-lg shadow-sm text-center"
+                    >
+                      <h3 class="font-bold text-blue-800">Perpustakaan</h3>
+                      <p class="text-sm text-gray-600 mt-1">3 Orang</p>
+                    </div>
+                    <div
+                      class="bg-blue-50 border border-blue-200 p-3 rounded-lg shadow-sm text-center"
+                    >
+                      <h3 class="font-bold text-blue-800">Laboran</h3>
+                      <p class="text-sm text-gray-600 mt-1">5 Orang</p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Profil Kepala Sekolah -->
+      <section class="animate-fade-in" style="animation-delay: 0.5s">
+        <div class="bg-white rounded-xl shadow-md overflow-hidden">
+          <div class="p-8">
+            <h2
+              class="text-3xl font-bold text-blue-800 mb-8 relative inline-block"
+            >
+              <span class="relative z-10">Kepala Sekolah</span>
+              <span
+                class="absolute bottom-0 left-0 w-full h-2 bg-blue-200 z-0"
+              ></span>
+            </h2>
+
+            <div class="flex flex-col lg:flex-row gap-8">
+              <div class="lg:w-1/3 flex justify-center">
+                <div class="relative group">
+                  <img
+                    src="https://storage.googleapis.com/workspace-0f70711f-8b4e-4d94-86f1-2a93ccde5887/image/6a8844c4-9e9e-4a4b-a5e9-db0302690bf5.png"
+                    alt="Potret resmi Drs. Ahmad Sudrajat, M.Pd, Kepala Sekolah SMPN 22 Kaur, pria berusia 50-an tahun berkaca mata, mengenakan jas dinas dan dasi, berdiri di depan latar buku"
+                    class="rounded-lg shadow-lg w-full max-w-xs border-4 border-white transform group-hover:scale-105 transition duration-300"
+                    onerror="this.src='https://storage.googleapis.com/workspace-0f70711f-8b4e-4d94-86f1-2a93ccde5887/image/077f4d80-a3f0-470e-b325-6f93179e51c1.png'"
+                  />
+                  <div
+                    class="absolute inset-0 bg-blue-700 opacity-0 group-hover:opacity-20 rounded-lg transition duration-300"
+                  ></div>
+                </div>
+              </div>
+              <div class="lg:w-2/3">
+                <h3 class="text-2xl font-bold text-gray-800 mb-2">
+                  Drs. Ahmad Sudrajat, M.Pd
+                </h3>
+                <p class="text-blue-600 font-medium mb-6">
+                  Kepala Sekolah SMP Negeri 22 Kaur
+                </p>
+
+                <div class="text-gray-700 space-y-4 mb-6">
+                  <p>
+                    Lahir di Kaur, 15 Januari 1972, Drs. Ahmad Sudrajat, M.Pd
+                    memulai karirnya sebagai guru bidang studi Matematika pada
+                    tahun 1996. Beliau menjabat sebagai Kepala Sekolah SMPN 22
+                    Kaur sejak tahun 2015.
+                  </p>
+                  <p>
+                    Pendidikan terakhir beliau adalah Magister Pendidikan dari
+                    Universitas Bengkulu dengan bidang konsentrasi Manajemen
+                    Pendidikan.
+                  </p>
+                </div>
+
+                <div
+                  class="bg-blue-50 border-l-4 border-blue-600 p-6 rounded-r-lg"
+                >
+                  <h4 class="font-bold text-lg text-blue-800 mb-3">Sambutan</h4>
+                  <p class="italic text-gray-700">
+                    "Pendidikan adalah investasi terpenting bagi masa depan
+                    generasi muda. Di SMPN 22 Kaur, kami berkomitmen untuk
+                    memberikan layanan pendidikan terbaik yang mempersiapkan
+                    peserta didik menghadapi tantangan zaman sambil tetap
+                    mempertahankan nilai-nilai luhur bangsa. Mari bersama-sama
+                    kita wujudkan generasi emas Indonesia yang cerdas,
+                    berkarakter, dan berwawasan lingkungan."
+                  </p>
+                  <p class="mt-4 font-medium text-blue-700">
+                    Drs. Ahmad Sudrajat, M.Pd
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+    </div>
+
+    <!-- Footer -->
+    <footer class="bg-gray-900 text-white py-12">
+      <div class="container mx-auto px-4">
+        <div class="grid md:grid-cols-4 gap-8 mb-8">
+          <div>
+            <h3 class="text-xl font-bold mb-4">Tentang Kami</h3>
+            <p class="text-gray-400">
+              SMP Negeri XX Kaur adalah sekolah unggulan di Kabupaten Kaur yang
+              berkomitmen untuk memberikan pendidikan berkualitas dan membentuk
+              generasi cerdas berkarakter.
+            </p>
+          </div>
+
+          <div>
+            <h3 class="text-xl font-bold mb-4">Tautan Cepat</h3>
+            <ul class="space-y-2">
+              <li>
+                <a href="#" class="text-gray-400 hover:text-white">Beranda</a>
+              </li>
+              <li>
+                <a href="#" class="text-gray-400 hover:text-white"
+                  >Profil Sekolah</a
+                >
+              </li>
+              <li>
+                <a href="#" class="text-gray-400 hover:text-white"
+                  >Guru & Staff</a
+                >
+              </li>
+              <li>
+                <a href="#" class="text-gray-400 hover:text-white">Kurikulum</a>
+              </li>
+              <li>
+                <a href="#" class="text-gray-400 hover:text-white">PPDB</a>
+              </li>
+            </ul>
+          </div>
+
+          <div>
+            <h3 class="text-xl font-bold mb-4">Kontak</h3>
+            <address class="not-italic space-y-2">
+              <p class="text-gray-400">Jl. Pendidikan No., Kaur Selatan</p>
+              <p class="text-gray-400">Kabupaten Kaur, Bengkulu 38963</p>
+              <p class="text-gray-400">Email: info@smpnkaur.sch.id</p>
+              <p class="text-gray-400">Telp: (0739) 1234567</p>
+            </address>
+          </div>
+
+          <div>
+            <h3 class="text-xl font-bold mb-4">Newsletter</h3>
+            <p class="text-gray-400 mb-4">
+              Dapatkan informasi terbaru tentang kegiatan sekolah langsung ke
+              email Anda.
+            </p>
+            <div class="flex">
+              <input
+                type="email"
+                placeholder="Alamat email"
+                class="px-4 py-2 rounded-l-lg w-full bg-gray-800 text-white focus:outline-none"
+              />
+              <button
+                class="bg-primary px-4 py-2 rounded-r-lg hover:bg-blue-700 transition"
+              >
+                <i class="fas fa-paper-plane"></i>
+              </button>
+            </div>
+          </div>
+        </div>
+
+        <div class="pt-6 border-t border-gray-800 text-center text-gray-400">
+          <p class="text-gray-500 text-xs mt-3">
+            © 2023 SMPN 22 Kaur. Seluruh hak cipta dilindungi.
+          </p>
+        </div>
+      </div>
+    </footer>
+
+    <!-- JavaScript -->
+    <script>
+      // Mobile menu toggle
+      document
+        .querySelector("header button")
+        .addEventListener("click", function () {
+          const menu = document.getElementById("mobile-menu");
+          menu.classList.toggle("hidden");
+        });
+
+      // Smooth scrolling for anchor links
+      document.querySelectorAll('a[href^="#"]').forEach((anchor) => {
+        anchor.addEventListener("click", function (e) {
+          e.preventDefault();
+
+          const targetId = this.getAttribute("href");
+          if (targetId === "#") return;
+
+          const targetElement = document.querySelector(targetId);
+          if (targetElement) {
+            window.scrollTo({
+              top: targetElement.offsetTop - 80,
+              behavior: "smooth",
+            });
+
+            // Close mobile menu if open
+            const mobileMenu = document.getElementById("mobile-menu");
+            if (!mobileMenu.classList.contains("hidden")) {
+              mobileMenu.classList.add("hidden");
+            }
+          }
+        });
+      });
+
+      // Sticky header effect
+      window.addEventListener("scroll", function () {
+        const header = document.querySelector("header");
+        if (window.scrollY > 100) {
+          header.classList.add("shadow-lg");
+        } else {
+          header.classList.remove("shadow-lg");
+        }
+      });
+
+      // Form submission
+      const contactForm = document.querySelector("#kontak form");
+      if (contactForm) {
+        contactForm.addEventListener("submit", function (e) {
+          e.preventDefault();
+          alert(
+            "Pesan Anda telah terkirim. Kami akan segera menghubungi Anda kembali."
+          );
+          this.reset();
+        });
+      }
+    </script>
+  </body>
+</html>
