@@ -1,0 +1,1324 @@
+<!DOCTYPE html>
+<html lang="id">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>SMP Negeri XX Kaur - Sekolah Unggulan Berkualitas</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css"
+    />
+    <script>
+      tailwind.config = {
+        theme: {
+          extend: {
+            colors: {
+              primary: "#2563eb",
+              secondary: "#1e40af",
+              accent: "#3b82f6",
+            },
+          },
+        },
+      };
+    </script>
+    <style>
+      @import url("https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap");
+
+      body {
+        font-family: "Poppins", sans-serif;
+        scroll-behavior: smooth;
+      }
+      .header-sticky {
+        position: sticky;
+        top: 0;
+        z-index: 50;
+        transition: all 0.3s ease;
+      }
+      /* Hero section image background */
+      .hero-bg {
+        background-size: cover;
+        background-position: center;
+        background-repeat: no-repeat;
+      }
+      .gradient-bg {
+        background: linear-gradient(135deg, #2563eb 0%, #1e40af 100%);
+      }
+      .menu-item:hover .menu-dropdown {
+        opacity: 1;
+        visibility: visible;
+        transform: translateY(0);
+      }
+      .news-card:hover {
+        transform: translateY(-5px);
+        box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+      }
+    </style>
+  </head>
+  <body class="bg-gray-50">
+    <!-- Header -->
+    <header class="header-sticky bg-white shadow-md">
+      <div
+        class="container mx-auto px-4 py-3 flex justify-between items-center"
+      >
+        <div class="flex items-center space-x-3">
+          <div class="w-16 h-16 rounded-lg flex items-center justify-center">
+            <img
+              src="/image/logo.png"
+              alt="Logo SMP Negeri XX Kaur - Perisai dengan motif khas Bengkulu dan tulisan SMP Negeri XX Kaur"
+              class="w-12 h-12 object-contain"
+            />
+          </div>
+          <div>
+            <h1 class="font-bold text-xl text-gray-800">SMP Negeri XX Kaur</h1>
+            <p class="text-sm text-gray-600">Sekolah Unggulan Berkualitas</p>
+          </div>
+        </div>
+
+        <nav class="hidden md:block">
+          <ul class="flex space-x-6">
+            <li class="relative menu-item">
+              <a
+                href="/"
+                class="text-gray-800 hover:text-primary font-medium py-2"
+                >Beranda</a
+              >
+            </li>
+            <li class="relative menu-item">
+              <a
+                href="pages/profil.html"
+                class="text-gray-800 hover:text-primary font-medium py-2"
+                >Profil <i class="fa-solid fa-angle-down text-sm"></i
+              ></a>
+              <div
+                class="menu-dropdown absolute left-0 mt-2 w-48 bg-white rounded-md shadow-lg opacity-0 invisible transform -translate-y-2 transition-all duration-300"
+              >
+                <div class="py-1">
+                  <a
+                    href="pages/profil.html#visi-misi"
+                    class="block px-4 py-2 text-gray-700 hover:bg-gray-100"
+                    >Visi & Misi</a
+                  >
+                  <a
+                    href="pages/profil.html#sejarah"
+                    class="block px-4 py-2 text-gray-700 hover:bg-gray-100"
+                    >Sejarah</a
+                  >
+                </div>
+              </div>
+            </li>
+            <li class="relative menu-item">
+              <a
+                href="pages/staff.html"
+                class="text-gray-800 hover:text-primary font-medium py-2"
+                >Guru & Staff</a
+              >
+            </li>
+            <li class="relative menu-item">
+              <a
+                href="pages/curriculum.html"
+                class="text-gray-800 hover:text-primary font-medium py-2"
+                >Kurikulum</a
+              >
+            </li>
+            <li class="relative menu-item">
+              <a
+                href="pages/news.html"
+                class="text-gray-800 hover:text-primary font-medium py-2"
+                >Berita</a
+              >
+            </li>
+            <li class="relative menu-item">
+              <a
+                href="pages/gallery.html"
+                class="text-gray-800 hover:text-primary font-medium py-2"
+                >Galeri</a
+              >
+            </li>
+            <li class="relative menu-item">
+              <a
+                href="pages/ppdb.html"
+                class="text-gray-800 hover:text-primary font-medium py-2"
+                >PPDB</a
+              >
+            </li>
+            <li class="relative menu-item">
+              <a
+                href="pages/contact.html"
+                class="text-gray-800 hover:text-primary font-medium py-2"
+                >Kontak</a
+              >
+            </li>
+          </ul>
+        </nav>
+
+        <button class="md:hidden text-gray-600">
+          <i class="fas fa-bars text-2xl"></i>
+        </button>
+      </div>
+    </header>
+
+    <!-- Mobile Menu -->
+    <div id="mobile-menu" class="md:hidden hidden bg-white shadow-lg">
+      <div class="container mx-auto px-4 py-3">
+        <ul class="space-y-3">
+          <li><a href="/" class="block py-2 text-gray-800">Beranda</a></li>
+          <li>
+            <a href="pages/profil.html" class="block py-2 text-gray-800"
+              >Profil</a
+            >
+          </li>
+          <li>
+            <a href="pages/staff.html" class="block py-2 text-gray-800"
+              >Guru & Staff</a
+            >
+          </li>
+          <li>
+            <a href="pages/curriculum.html" class="block py-2 text-gray-800"
+              >Kurikulum</a
+            >
+          </li>
+          <li>
+            <a href="pages/news.html" class="block py-2 text-gray-800"
+              >Berita</a
+            >
+          </li>
+          <li>
+            <a href="pages/gallery.html" class="block py-2 text-gray-800"
+              >Galeri</a
+            >
+          </li>
+          <li>
+            <a href="pages/ppdb.html" class="block py-2 text-gray-800">PPDB</a>
+          </li>
+          <li>
+            <a href="pages/contact.html" class="block py-2 text-gray-800"
+              >Kontak</a
+            >
+          </li>
+        </ul>
+      </div>
+    </div>
+
+    <!-- Hero Section with Image Background -->
+    <section
+      id="home"
+      class="relative h-screen flex items-center justify-center text-white overflow-hidden bg-cover bg-center"
+      style="
+        background-image: url('https://storage.googleapis.com/workspace-0f70711f-8b4e-4d94-86f1-2a93ccde5887/image/0ac279fe-7b04-4795-a90d-03a9a6303370.png');
+      "
+    >
+      <!-- Blue Overlay -->
+      <div class="absolute inset-0 bg-primary opacity-80 z-0"></div>
+
+      <div
+        class="container mx-auto px-4 flex flex-col md:flex-row items-center relative z-10 py-20"
+      >
+        <div class="md:w-1/2 mb-10 md:mb-0">
+          <h1 class="text-4xl md:text-5xl font-bold mb-4">
+            Selamat Datang di SMP Negeri XX Kaur
+          </h1>
+          <p class="text-xl mb-8">
+            Mewujudkan Generasi Cerdas, Berkarakter, dan Berprestasi
+          </p>
+          <div class="flex space-x-4">
+            <a
+              href="pages/ppdb.html"
+              class="bg-white text-primary px-6 py-3 rounded-lg font-medium hover:bg-gray-100 transition hover:shadow-lg"
+              >Informasi PPDB</a
+            >
+            <a
+              href="pages/profil.html"
+              class="border-2 border-white text-white px-6 py-3 rounded-lg font-medium hover:bg-white hover:text-primary transition hover:shadow-lg"
+              >Profil Sekolah</a
+            >
+          </div>
+        </div>
+        <div class="md:w-1/2 flex justify-center">
+          <img
+            src="https://storage.googleapis.com/workspace-0f70711f-8b4e-4d94-86f1-2a93ccde5887/image/b09189e7-1910-4e06-902f-ebd58ece0b13.png"
+            alt="Siswa SMP Negeri XX Kaur sedang belajar di kelas modern dengan fasilitas lengkap"
+            class="rounded-lg shadow-2xl w-full max-w-md transform hover:scale-105 transition duration-500"
+          />
+        </div>
+      </div>
+    </section>
+
+    <!-- Profil Sekolah -->
+    <section id="profile" class="py-16 bg-white">
+      <div class="container mx-auto px-4">
+        <div class="text-center mb-12">
+          <h2 class="text-3xl font-bold text-gray-800 mb-4">
+            Profil SMP Negeri XX Kaur
+          </h2>
+          <div class="w-20 h-1 bg-primary mx-auto"></div>
+          <p class="mt-4 text-gray-600 max-w-2xl mx-auto">
+            SMP Negeri XX Kaur merupakan salah satu sekolah menengah pertama
+            unggulan di Kabupaten Kaur yang telah menghasilkan lulusan
+            berprestasi di tingkat nasional.
+          </p>
+        </div>
+
+        <div class="grid md:grid-cols-3 gap-8">
+          <div class="bg-gray-50 p-6 rounded-lg shadow-md">
+            <div
+              class="w-16 h-16 bg-primary rounded-full flex items-center justify-center text-white mb-4 mx-auto"
+            >
+              <i class="fas fa-eye text-2xl"></i>
+            </div>
+            <h3 class="text-xl font-semibold text-center mb-3">Visi</h3>
+            <p class="text-gray-600 text-center">
+              "Menjadi sekolah unggulan yang menghasilkan lulusan berakhlak
+              mulia, cerdas, kreatif, dan berwawasan global."
+            </p>
+          </div>
+
+          <div class="bg-gray-50 p-6 rounded-lg shadow-md">
+            <div
+              class="w-16 h-16 bg-primary rounded-full flex items-center justify-center text-white mb-4 mx-auto"
+            >
+              <i class="fas fa-bullseye text-2xl"></i>
+            </div>
+            <h3 class="text-xl font-semibold text-center mb-3">Misi</h3>
+            <ul class="text-gray-600 space-y-2 pl-5 list-disc">
+              <li>Menyelenggarakan pembelajaran berkualitas</li>
+              <li>Menumbuhkan karakter mulia</li>
+              <li>Mengembangkan bakat dan kreativitas</li>
+              <li>Mendorong inovasi pembelajaran</li>
+            </ul>
+          </div>
+
+          <div class="bg-gray-50 p-6 rounded-lg shadow-md">
+            <div
+              class="w-16 h-16 bg-primary rounded-full flex items-center justify-center text-white mb-4 mx-auto"
+            >
+              <i class="fas fa-history text-2xl"></i>
+            </div>
+            <h3 class="text-xl font-semibold text-center mb-3">Sejarah</h3>
+            <p class="text-gray-600">
+              Didirikan pada tahun 1985, SMP Negeri XX Kaur telah berkembang
+              menjadi salah satu sekolah terbaik di Kabupaten Kaur dengan
+              berbagai prestasi akademik maupun non-akademik.
+            </p>
+          </div>
+        </div>
+
+        <div class="mt-12 grid md:grid-cols-2 gap-8 items-center">
+          <div>
+            <h3 class="text-2xl font-bold text-gray-800 mb-4">
+              Fasilitas Unggulan
+            </h3>
+            <div class="space-y-4">
+              <div class="flex items-start space-x-4">
+                <div
+                  class="w-10 h-10 bg-primary rounded-full flex items-center justify-center text-white flex-shrink-0"
+                >
+                  <i class="fas fa-wifi"></i>
+                </div>
+                <div>
+                  <h4 class="font-semibold">Internet Cepat</h4>
+                  <p class="text-gray-600">
+                    Akses internet berkecepatan tinggi untuk mendukung
+                    pembelajaran digital.
+                  </p>
+                </div>
+              </div>
+              <div class="flex items-start space-x-4">
+                <div
+                  class="w-10 h-10 bg-primary rounded-full flex items-center justify-center text-white flex-shrink-0"
+                >
+                  <i class="fas fa-flask"></i>
+                </div>
+                <div>
+                  <h4 class="font-semibold">Lab Sains Modern</h4>
+                  <p class="text-gray-600">
+                    Fasilitas laboratorium IPA terkini untuk praktikum siswa.
+                  </p>
+                </div>
+              </div>
+              <div class="flex items-start space-x-4">
+                <div
+                  class="w-10 h-10 bg-primary rounded-full flex items-center justify-center text-white flex-shrink-0"
+                >
+                  <i class="fas fa-book"></i>
+                </div>
+                <div>
+                  <h4 class="font-semibold">Perpustakaan Digital</h4>
+                  <p class="text-gray-600">
+                    Koleksi buku fisik dan digital yang lengkap untuk literasi
+                    siswa.
+                  </p>
+                </div>
+              </div>
+              <div class="flex items-start space-x-4">
+                <div
+                  class="w-10 h-10 bg-primary rounded-full flex items-center justify-center text-white flex-shrink-0"
+                >
+                  <i class="fas fa-futbol"></i>
+                </div>
+                <div>
+                  <h4 class="font-semibold">Lapangan Olahraga</h4>
+                  <p class="text-gray-600">
+                    Area olahraga lengkap untuk mengembangkan potensi atletik
+                    siswa.
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="h-full">
+            <img
+              src="https://storage.googleapis.com/workspace-0f70711f-8b4e-4d94-86f1-2a93ccde5887/image/09f5a5a9-bfa6-4d85-944e-c80885d3c954.png"
+              alt="Gedung utama SMP Negeri XX Kaur dengan taman yang asri dan fasilitas lengkap"
+              class="rounded-lg shadow-md w-full h-full object-cover"
+            />
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Guru & Staff -->
+    <section id="guru" class="py-16 bg-gray-50">
+      <div class="container mx-auto px-4">
+        <div class="text-center mb-12">
+          <h2 class="text-3xl font-bold text-gray-800 mb-4">Guru & Staff</h2>
+          <div class="w-20 h-1 bg-primary mx-auto"></div>
+          <p class="mt-4 text-gray-600 max-w-2xl mx-auto">
+            Tim pengajar profesional dan berpengalaman yang berkomitmen untuk
+            memberikan pendidikan terbaik bagi siswa.
+          </p>
+        </div>
+
+        <div class="grid sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6">
+          <!-- Guru 1 -->
+          <div
+            class="bg-white rounded-lg shadow-md overflow-hidden transition-all duration-300 hover:shadow-lg"
+          >
+            <div class="relative pt-[100%]">
+              <img
+                src="/image/guru1.jpg"
+                alt="Guru Matematika SMP Negeri XX Kaur - Bapak Adi Wijaya"
+                class="absolute top-0 left-0 w-full h-full object-cover"
+              />
+            </div>
+            <div class="p-4">
+              <h3 class="font-bold text-lg">Bapak Adi Wijaya, S.Pd.</h3>
+              <p class="text-primary text-sm mb-2">Guru Matematika</p>
+              <p class="text-gray-600 text-sm">
+                Pengalaman 15 tahun mengajar, meraih penghargaan guru
+                berprestasi tingkat provinsi.
+              </p>
+            </div>
+          </div>
+
+          <!-- Guru 2 -->
+          <div
+            class="bg-white rounded-lg shadow-md overflow-hidden transition-all duration-300 hover:shadow-lg"
+          >
+            <div class="relative pt-[100%]">
+              <img
+                src="/image/guru2.jpg"
+                alt="Guru Bahasa Inggris SMP Negeri XX Kaur - Ibu Rina Hartati"
+                class="absolute top-0 left-0 w-full h-full object-cover"
+              />
+            </div>
+            <div class="p-4">
+              <h3 class="font-bold text-lg">Ibu Rina Hartati, M.Pd.</h3>
+              <p class="text-primary text-sm mb-2">Guru Bahasa Inggris</p>
+              <p class="text-gray-600 text-sm">
+                Lulusan S2 Pendidikan Bahasa Inggris, berpengalaman mengajar
+                selama 12 tahun.
+              </p>
+            </div>
+          </div>
+
+          <!-- Guru 3 -->
+          <div
+            class="bg-white rounded-lg shadow-md overflow-hidden transition-all duration-300 hover:shadow-lg"
+          >
+            <div class="relative pt-[100%]">
+              <img
+                src="/image/guru3.jpeg"
+                alt="Guru IPA SMP Negeri XX Kaur - Bapak Hendra Pratama"
+                class="absolute top-0 left-0 w-full h-full object-cover"
+              />
+            </div>
+            <div class="p-4">
+              <h3 class="font-bold text-lg">Bapak Hendra Pratama, S.Si.</h3>
+              <p class="text-primary text-sm mb-2">Guru IPA</p>
+              <p class="text-gray-600 text-sm">
+                Spesialisasi Fisika, penulis buku pelajaran dan pembina
+                olimpiade sains.
+              </p>
+            </div>
+          </div>
+
+          <!-- Guru 4 -->
+          <div
+            class="bg-white rounded-lg shadow-md overflow-hidden transition-all duration-300 hover:shadow-lg"
+          >
+            <div class="relative pt-[100%]">
+              <img
+                src="https://storage.googleapis.com/workspace-0f70711f-8b4e-4d94-86f1-2a93ccde5887/image/091f2df2-6183-40b5-8416-868ef1f15035.png"
+                alt="Kepala Sekolah SMP Negeri XX Kaur - Ibu Sri Rahayu"
+                class="absolute top-0 left-0 w-full h-full object-cover"
+              />
+            </div>
+            <div class="p-4">
+              <h3 class="font-bold text-lg">Ibu Sri Rahayu, M.Pd.</h3>
+              <p class="text-primary text-sm mb-2">Kepala Sekolah</p>
+              <p class="text-gray-600 text-sm">
+                Memimpin SMP Negeri XX Kaur sejak 2018, berhasil membawa sekolah
+                meraih berbagai penghargaan.
+              </p>
+            </div>
+          </div>
+        </div>
+
+        <div class="mt-10 text-center">
+          <a
+            href="pages/staff.html"
+            class="inline-block px-6 py-3 border border-primary text-primary rounded-lg font-medium hover:bg-primary hover:text-white transition"
+            >Lihat Semua Guru</a
+          >
+        </div>
+      </div>
+    </section>
+
+    <!-- Kurikulum -->
+    <section id="kurikulum" class="py-16 bg-white">
+      <div class="container mx-auto px-4">
+        <div class="text-center mb-12">
+          <h2 class="text-3xl font-bold text-gray-800 mb-4">
+            Kurikulum Pendidikan
+          </h2>
+          <div class="w-20 h-1 bg-primary mx-auto"></div>
+          <p class="mt-4 text-gray-600 max-w-2xl mx-auto">
+            Kurikulum yang dirancang untuk membentuk siswa yang berkarakter,
+            kompeten, dan siap menghadapi tantangan masa depan.
+          </p>
+        </div>
+
+        <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-6 mb-12">
+          <div class="bg-primary text-white p-6 rounded-lg shadow-md">
+            <div
+              class="w-12 h-12 bg-white rounded-full flex items-center justify-center text-primary mb-4"
+            >
+              <i class="fas fa-book-open text-xl"></i>
+            </div>
+            <h3 class="font-bold text-xl mb-3">Kurikulum Nasional</h3>
+            <p class="text-gray-200">
+              Mengimplementasikan Kurikulum 2013 yang disempurnakan sesuai
+              pedoman Kemendikbud.
+            </p>
+          </div>
+
+          <div class="bg-gray-50 p-6 rounded-lg shadow-md">
+            <div
+              class="w-12 h-12 bg-primary rounded-full flex items-center justify-center text-white mb-4"
+            >
+              <i class="fas fa-laptop-code text-xl"></i>
+            </div>
+            <h3 class="font-bold text-xl mb-3">STEM Education</h3>
+            <p class="text-gray-600">
+              Pendekatan pembelajaran sains, teknologi, teknik, dan matematika
+              terintegrasi.
+            </p>
+          </div>
+
+          <div class="bg-gray-50 p-6 rounded-lg shadow-md">
+            <div
+              class="w-12 h-12 bg-primary rounded-full flex items-center justify-center text-white mb-4"
+            >
+              <i class="fas fa-globe-asia text-xl"></i>
+            </div>
+            <h3 class="font-bold text-xl mb-3">Bahasa Inggris Intensif</h3>
+            <p class="text-gray-600">
+              Program penguatan bahasa Inggris untuk persiapan globalisasi.
+            </p>
+          </div>
+
+          <div class="bg-gray-50 p-6 rounded-lg shadow-md">
+            <div
+              class="w-12 h-12 bg-primary rounded-full flex items-center justify-center text-white mb-4"
+            >
+              <i class="fas fa-hands-helping text-xl"></i>
+            </div>
+            <h3 class="font-bold text-xl mb-3">Pendidikan Karakter</h3>
+            <p class="text-gray-600">
+              Pembentukan karakter melalui program khusus dan integrasi dalam
+              semua mata pelajaran.
+            </p>
+          </div>
+        </div>
+
+        <div class="bg-gray-50 rounded-lg shadow-md overflow-hidden">
+          <div class="grid md:grid-cols-2">
+            <div class="p-8">
+              <h3 class="text-2xl font-bold text-gray-800 mb-4">
+                Program Unggulan
+              </h3>
+              <ul class="space-y-4">
+                <li class="flex items-start space-x-3">
+                  <div
+                    class="w-8 h-8 bg-primary rounded-full flex items-center justify-center text-white flex-shrink-0"
+                  >
+                    <i class="fas fa-check"></i>
+                  </div>
+                  <div>
+                    <h4 class="font-semibold">Kelas Olimpiade</h4>
+                    <p class="text-gray-600">
+                      Program pembinaan peserta olimpiade sains tingkat
+                      kabupaten hingga nasional.
+                    </p>
+                  </div>
+                </li>
+                <li class="flex items-start space-x-3">
+                  <div
+                    class="w-8 h-8 bg-primary rounded-full flex items-center justify-center text-white flex-shrink-0"
+                  >
+                    <i class="fas fa-check"></i>
+                  </div>
+                  <div>
+                    <h4 class="font-semibold">Literasi Digital</h4>
+                    <p class="text-gray-600">
+                      Pengenalan coding, robotika, dan kemampuan abad 21 sejak
+                      dini.
+                    </p>
+                  </div>
+                </li>
+                <li class="flex items-start space-x-3">
+                  <div
+                    class="w-8 h-8 bg-primary rounded-full flex items-center justify-center text-white flex-shrink-0"
+                  >
+                    <i class="fas fa-check"></i>
+                  </div>
+                  <div>
+                    <h4 class="font-semibold">Ekstrakurikuler Wajib</h4>
+                    <p class="text-gray-600">
+                      Setiap siswa wajib mengikuti minimal 2 ekstrakurikuler
+                      sesuai minat dan bakat.
+                    </p>
+                  </div>
+                </li>
+              </ul>
+            </div>
+            <div class="flex items-center justify-center bg-primary">
+              <img
+                src="https://storage.googleapis.com/workspace-0f70711f-8b4e-4d94-86f1-2a93ccde5887/image/8888068c-80ac-4d03-8680-8f06491c3273.png"
+                alt="Siswa SMP Negeri XX Kaur sedang mengikuti kegiatan praktikum sains di laboratorium"
+                class="w-full h-full object-cover"
+              />
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Berita -->
+    <section id="berita" class="py-16 bg-gray-50">
+      <div class="container mx-auto px-4">
+        <div class="text-center mb-12">
+          <h2 class="text-3xl font-bold text-gray-800 mb-4">
+            Berita & Kegiatan
+          </h2>
+          <div class="w-20 h-1 bg-primary mx-auto"></div>
+          <p class="mt-4 text-gray-600 max-w-2xl mx-auto">
+            Informasi terbaru seputar kegiatan dan prestasi SMP Negeri XX Kaur.
+          </p>
+        </div>
+
+        <div class="grid md:grid-cols-3 gap-8">
+          <!-- Berita 1 -->
+          <div
+            class="bg-white rounded-lg shadow-md overflow-hidden news-card transition-all duration-300"
+          >
+            <div class="relative pt-[60%]">
+              <img
+                src="https://storage.googleapis.com/workspace-0f70711f-8b4e-4d94-86f1-2a93ccde5887/image/fd6d5a80-1af1-4492-95ed-8149661482db.png"
+                alt="Siswa SMP Negeri XX Kaur memenangkan lomba karya ilmiah tingkat provinsi"
+                class="absolute top-0 left-0 w-full h-full object-cover"
+              />
+              <div
+                class="absolute bottom-0 left-0 bg-primary text-white px-3 py-1 text-sm"
+              >
+                10 Juni 2023
+              </div>
+            </div>
+            <div class="p-6">
+              <span class="text-primary text-sm font-medium">Prestasi</span>
+              <h3 class="font-bold text-xl mb-3">
+                Siswa SMP Negeri XX Kaur Juara Lomba Karya Ilmiah Tingkat
+                Provinsi
+              </h3>
+              <p class="text-gray-600 mb-4">
+                Tim karya ilmiah SMP Negeri XX Kaur berhasil meraih juara 1
+                dalam Lomba Karya Ilmiah Remaja tingkat Provinsi Bengkulu...
+              </p>
+              <a href="#" class="text-primary font-medium flex items-center"
+                >Baca Selengkapnya
+                <i class="fas fa-chevron-right ml-1 text-sm"></i
+              ></a>
+            </div>
+          </div>
+
+          <!-- Berita 2 -->
+          <div
+            class="bg-white rounded-lg shadow-md overflow-hidden news-card transition-all duration-300"
+          >
+            <div class="relative pt-[60%]">
+              <img
+                src="https://storage.googleapis.com/workspace-0f70711f-8b4e-4d94-86f1-2a93ccde5887/image/821dd5ac-150f-435f-9979-9e004599ba20.png"
+                alt="Kegiatan karya wisata siswa ke Taman Nasional Bukit Barisan Selatan"
+                class="absolute top-0 left-0 w-full h-full object-cover"
+              />
+              <div
+                class="absolute bottom-0 left-0 bg-primary text-white px-3 py-1 text-sm"
+              >
+                25 Mei 2023
+              </div>
+            </div>
+            <div class="p-6">
+              <span class="text-primary text-sm font-medium">Kegiatan</span>
+              <h3 class="font-bold text-xl mb-3">
+                Karya Wisata Edukatif Ke Taman Nasional Bukit Barisan Selatan
+              </h3>
+              <p class="text-gray-600 mb-4">
+                Sebanyak 150 siswa kelas VIII mengikuti kegiatan karya wisata
+                edukatif ke Taman Nasional Bukit Barisan Selatan...
+              </p>
+              <a href="#" class="text-primary font-medium flex items-center"
+                >Baca Selengkapnya
+                <i class="fas fa-chevron-right ml-1 text-sm"></i
+              ></a>
+            </div>
+          </div>
+
+          <!-- Berita 3 -->
+          <div
+            class="bg-white rounded-lg shadow-md overflow-hidden news-card transition-all duration-300"
+          >
+            <div class="relative pt-[60%]">
+              <img
+                src="https://storage.googleapis.com/workspace-0f70711f-8b4e-4d94-86f1-2a93ccde5887/image/859fd1b3-84b6-4c1a-a274-105057ec1480.png"
+                alt="Workshop guru SMP Negeri XX Kaur tentang pembelajaran berbasis proyek"
+                class="absolute top-0 left-0 w-full h-full object-cover"
+              />
+              <div
+                class="absolute bottom-0 left-0 bg-primary text-white px-3 py-1 text-sm"
+              >
+                12 Mei 2023
+              </div>
+            </div>
+            <div class="p-6">
+              <span class="text-primary text-sm font-medium">Pengembangan</span>
+              <h3 class="font-bold text-xl mb-3">
+                Workshop Pembelajaran Berbasis Proyek untuk Para Guru
+              </h3>
+              <p class="text-gray-600 mb-4">
+                SMP Negeri XX Kaur menyelenggarakan workshop pembelajaran
+                berbasis proyek untuk meningkatkan kompetensi guru dalam
+                menerapkan...
+              </p>
+              <a href="#" class="text-primary font-medium flex items-center"
+                >Baca Selengkapnya
+                <i class="fas fa-chevron-right ml-1 text-sm"></i
+              ></a>
+            </div>
+          </div>
+        </div>
+
+        <div class="mt-10 text-center">
+          <a
+            href="pages/news.html"
+            class="inline-block px-6 py-3 border border-primary text-primary rounded-lg font-medium hover:bg-primary hover:text-white transition"
+            >Lihat Semua Berita</a
+          >
+        </div>
+      </div>
+    </section>
+
+    <!-- Galeri -->
+    <section id="galeri" class="py-16 bg-white">
+      <div class="container mx-auto px-4">
+        <div class="text-center mb-12">
+          <h2 class="text-3xl font-bold text-gray-800 mb-4">Galeri Kegiatan</h2>
+          <div class="w-20 h-1 bg-primary mx-auto"></div>
+          <p class="mt-4 text-gray-600 max-w-2xl mx-auto">
+            Dokumentasi berbagai kegiatan belajar mengajar dan acara sekolah.
+          </p>
+        </div>
+
+        <div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4">
+          <div class="relative group overflow-hidden rounded-lg h-48">
+            <img
+              src="https://storage.googleapis.com/workspace-0f70711f-8b4e-4d94-86f1-2a93ccde5887/image/9ca78cfb-a333-4af9-a89d-70710a09be9a.png"
+              alt="Upacara bendera hari senin di halaman sekolah SMP Negeri XX Kaur"
+              class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
+            />
+            <div
+              class="absolute inset-0 bg-black bg-opacity-40 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity"
+            >
+              <i class="fas fa-search-plus text-white text-2xl"></i>
+            </div>
+          </div>
+          <div class="relative group overflow-hidden rounded-lg h-48">
+            <img
+              src="https://storage.googleapis.com/workspace-0f70711f-8b4e-4d94-86f1-2a93ccde5887/image/11a6e55b-4d06-4400-a8fe-87f5f1492d0d.png"
+              alt="Siswa SMP Negeri XX Kaur sedang presentasi hasil proyek sains di depan kelas"
+              class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
+            />
+            <div
+              class="absolute inset-0 bg-black bg-opacity-40 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity"
+            >
+              <i class="fas fa-search-plus text-white text-2xl"></i>
+            </div>
+          </div>
+          <div class="relative group overflow-hidden rounded-lg h-48">
+            <img
+              src="../image/galeri3.jpg"
+              alt="Ekstrakurikuler tari tradisional Bengkulu di aula sekolah"
+              class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
+            />
+            <div
+              class="absolute inset-0 bg-black bg-opacity-40 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity"
+            >
+              <i class="fas fa-search-plus text-white text-2xl"></i>
+            </div>
+          </div>
+          <div class="relative group overflow-hidden rounded-lg h-48">
+            <img
+              src="https://storage.googleapis.com/workspace-0f70711f-8b4e-4d94-86f1-2a93ccde5887/image/58febf62-2c5c-4baa-ade7-aa974a5f36bc.png"
+              alt="Perayaan hari kemerdekaan 17 Agustus dengan berbagai lomba tradisional"
+              class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
+            />
+            <div
+              class="absolute inset-0 bg-black bg-opacity-40 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity"
+            >
+              <i class="fas fa-search-plus text-white text-2xl"></i>
+            </div>
+          </div>
+          <div class="relative group overflow-hidden rounded-lg h-48">
+            <img
+              src="../image/galeri.jpg"
+              alt="Kegiatan praktikum biologi di laboratorium sekolah"
+              class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
+            />
+            <div
+              class="absolute inset-0 bg-black bg-opacity-40 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity"
+            >
+              <i class="fas fa-search-plus text-white text-2xl"></i>
+            </div>
+          </div>
+          <div class="relative group overflow-hidden rounded-lg h-48">
+            <img
+              src="https://storage.googleapis.com/workspace-0f70711f-8b4e-4d94-86f1-2a93ccde5887/image/14034a0c-4f98-40bb-a4b4-9ba728a7f16e.png"
+              alt="Siswa berdiskusi dalam kegiatan kelompok belajar di perpustakaan"
+              class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
+            />
+            <div
+              class="absolute inset-0 bg-black bg-opacity-40 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity"
+            >
+              <i class="fas fa-search-plus text-white text-2xl"></i>
+            </div>
+          </div>
+          <div class="relative group overflow-hidden rounded-lg h-48">
+            <img
+              src="../image/galeri7.jpeg"
+              alt="Penyerahan hadiah bagi siswa berprestasi di upacara sekolah"
+              class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
+            />
+            <div
+              class="absolute inset-0 bg-black bg-opacity-40 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity"
+            >
+              <i class="fas fa-search-plus text-white text-2xl"></i>
+            </div>
+          </div>
+          <div class="relative group overflow-hidden rounded-lg h-48">
+            <img
+              src="https://storage.googleapis.com/workspace-0f70711f-8b4e-4d94-86f1-2a93ccde5887/image/72925277-2fa5-40f0-92d8-7ba6db386c0d.png"
+              alt="Kegiatan outbond siswa di alam terbuka untuk pembentukan karakter"
+              class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
+            />
+            <div
+              class="absolute inset-0 bg-black bg-opacity-40 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity"
+            >
+              <i class="fas fa-search-plus text-white text-2xl"></i>
+            </div>
+          </div>
+        </div>
+
+        <div class="mt-10 text-center">
+          <a
+            href="pages/gallery.html"
+            class="inline-block px-6 py-3 border border-primary text-primary rounded-lg font-medium hover:bg-primary hover:text-white transition"
+            >Lihat Lebih Banyak</a
+          >
+        </div>
+      </div>
+    </section>
+    <div
+      id="imageModal"
+      class="fixed inset-0 bg-black bg-opacity-80 hidden items-center justify-center z-50"
+    >
+      <span
+        id="closeModal"
+        class="absolute top-5 right-8 text-white text-3xl cursor-pointer"
+        >&times;</span
+      >
+      <img id="modalImg" class="max-w-[90%] max-h-[90%] rounded-lg shadow-lg" />
+    </div>
+
+    <!-- PPDB -->
+    <section id="ppdb" class="py-16 gradient-bg text-white">
+      <div class="container mx-auto px-4">
+        <div class="text-center mb-12">
+          <h2 class="text-3xl font-bold mb-4">Penerimaan Peserta Didik Baru</h2>
+          <div class="w-20 h-1 bg-white mx-auto"></div>
+          <p class="mt-4 max-w-2xl mx-auto">
+            Informasi pendaftaran dan persyaratan untuk tahun ajaran baru
+            2023/2024.
+          </p>
+        </div>
+
+        <div class="grid md:grid-cols-2 gap-8 items-center">
+          <div>
+            <h3 class="text-2xl font-bold mb-4">Jadwal Pendaftaran</h3>
+            <div class="space-y-4">
+              <div class="flex items-start space-x-4">
+                <div
+                  class="w-10 h-10 bg-white rounded-full flex items-center justify-center text-primary flex-shrink-0"
+                >
+                  <i class="fas fa-calendar-alt"></i>
+                </div>
+                <div>
+                  <h4 class="font-semibold">Pendaftaran Gelombang 1</h4>
+                  <p>15 Mei - 10 Juni 2023</p>
+                </div>
+              </div>
+              <div class="flex items-start space-x-4">
+                <div
+                  class="w-10 h-10 bg-white rounded-full flex items-center justify-center text-primary flex-shrink-0"
+                >
+                  <i class="fas fa-calendar-alt"></i>
+                </div>
+                <div>
+                  <h4 class="font-semibold">Pendaftaran Gelombang 2</h4>
+                  <p>12 Juni - 8 Juli 2023</p>
+                </div>
+              </div>
+              <div class="flex items-start space-x-4">
+                <div
+                  class="w-10 h-10 bg-white rounded-full flex items-center justify-center text-primary flex-shrink-0"
+                >
+                  <i class="fas fa-calendar-alt"></i>
+                </div>
+                <div>
+                  <h4 class="font-semibold">Pengumuman</h4>
+                  <p>15 Juli 2023</p>
+                </div>
+              </div>
+              <div class="flex items-start space-x-4">
+                <div
+                  class="w-10 h-10 bg-white rounded-full flex items-center justify-center text-primary flex-shrink-0"
+                >
+                  <i class="fas fa-calendar-alt"></i>
+                </div>
+                <div>
+                  <h4 class="font-semibold">Daftar Ulang</h4>
+                  <p>17-21 Juli 2023</p>
+                </div>
+              </div>
+            </div>
+
+            <h3 class="text-2xl font-bold mt-8 mb-4">
+              Persyaratan Pendaftaran
+            </h3>
+            <ul class="space-y-2 pl-5 list-disc">
+              <li>Usia maksimal 15 tahun per 1 Juli 2023</li>
+              <li>Fotokopi raport SD/MI kelas 4-6</li>
+              <li>Fotokopi akta kelahiran dan KK</li>
+              <li>Pas foto 3x4 (2 lembar)</li>
+              <li>Surat keterangan lulus SD/MI (jika sudah tersedia)</li>
+            </ul>
+
+            <div class="mt-8 flex space-x-4">
+              <a
+                href="pages/ppdb.html"
+                class="bg-white text-primary px-6 py-3 rounded-lg font-medium hover:bg-gray-100 transition"
+                >Daftar Online</a
+              >
+              <a
+                href="#"
+                class="border border-white px-6 py-3 rounded-lg font-medium hover:bg-white hover:text-primary transition"
+                >Download Brosur</a
+              >
+            </div>
+          </div>
+          <div>
+            <img
+              src="https://storage.googleapis.com/workspace-0f70711f-8b4e-4d94-86f1-2a93ccde5887/image/6bae4067-93aa-4df2-bbbe-a759b833cd27.png"
+              alt="Suasana penerimaan siswa baru SMP Negeri XX Kaur tahun sebelumnya"
+              class="rounded-lg shadow-xl w-full"
+            />
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Kontak -->
+    <section id="kontak" class="py-16 bg-white">
+      <div class="container mx-auto px-4">
+        <div class="text-center mb-12">
+          <h2 class="text-3xl font-bold text-gray-800 mb-4">Hubungi Kami</h2>
+          <div class="w-20 h-1 bg-primary mx-auto"></div>
+          <p class="mt-4 text-gray-600 max-w-2xl mx-auto">
+            Kami siap menjawab pertanyaan Anda melalui berbagai saluran
+            komunikasi berikut.
+          </p>
+        </div>
+
+        <div class="grid md:grid-cols-2 gap-8">
+          <div>
+            <h3 class="text-2xl font-bold text-gray-800 mb-6">
+              Informasi Kontak
+            </h3>
+
+            <div class="space-y-4">
+              <div class="flex items-start space-x-4">
+                <div
+                  class="w-10 h-10 bg-primary rounded-full flex items-center justify-center text-white flex-shrink-0"
+                >
+                  <i class="fas fa-map-marker-alt"></i>
+                </div>
+                <div>
+                  <h4 class="font-semibold text-gray-800">Alamat</h4>
+                  <p class="text-gray-600">
+                    Jl. Pendidikan No., Kecamatan Kaur Selatan, Kabupaten Kaur,
+                    Bengkulu 38963
+                  </p>
+                </div>
+              </div>
+
+              <div class="flex items-start space-x-4">
+                <div
+                  class="w-10 h-10 bg-primary rounded-full flex items-center justify-center text-white flex-shrink-0"
+                >
+                  <i class="fas fa-phone-alt"></i>
+                </div>
+                <div>
+                  <h4 class="font-semibold text-gray-800">Telepon</h4>
+                  <p class="text-gray-600">(0739) 1234567</p>
+                  <p class="text-gray-600">0812 3456 7890 (WA)</p>
+                </div>
+              </div>
+
+              <div class="flex items-start space-x-4">
+                <div
+                  class="w-10 h-10 bg-primary rounded-full flex items-center justify-center text-white flex-shrink-0"
+                >
+                  <i class="fas fa-envelope"></i>
+                </div>
+                <div>
+                  <h4 class="font-semibold text-gray-800">Email</h4>
+                  <p class="text-gray-600">info@smpkaur.sch.id</p>
+                  <p class="text-gray-600">ppdb@smpkaur.sch.id (PPDB)</p>
+                </div>
+              </div>
+
+              <div class="flex items-start space-x-4">
+                <div
+                  class="w-10 h-10 bg-primary rounded-full flex items-center justify-center text-white flex-shrink-0"
+                >
+                  <i class="fas fa-clock"></i>
+                </div>
+                <div>
+                  <h4 class="font-semibold text-gray-800">Jam Operasional</h4>
+                  <p class="text-gray-600">Senin - Jumat: 07.30 - 15.30 WIB</p>
+                  <p class="text-gray-600">Sabtu: 08.00 - 12.00 WIB</p>
+                </div>
+              </div>
+            </div>
+
+            <h3 class="text-2xl font-bold text-gray-800 mt-8 mb-6">
+              Media Sosial
+            </h3>
+            <div class="flex space-x-4">
+              <a
+                href="#"
+                class="w-10 h-10 bg-blue-600 rounded-full flex items-center justify-center text-white hover:bg-blue-700"
+              >
+                <i class="fab fa-facebook-f"></i>
+              </a>
+              <a
+                href="#"
+                class="w-10 h-10 bg-blue-400 rounded-full flex items-center justify-center text-white hover:bg-blue-500"
+              >
+                <i class="fab fa-twitter"></i>
+              </a>
+              <a
+                href="#"
+                class="w-10 h-10 bg-pink-600 rounded-full flex items-center justify-center text-white hover:bg-pink-700"
+              >
+                <i class="fab fa-instagram"></i>
+              </a>
+              <a
+                href="#"
+                class="w-10 h-10 bg-red-600 rounded-full flex items-center justify-center text-white hover:bg-red-700"
+              >
+                <i class="fab fa-youtube"></i>
+              </a>
+            </div>
+          </div>
+
+          <div>
+            <div class="bg-gray-50 p-6 rounded-lg shadow-md">
+              <h3 class="text-xl font-bold text-gray-800 mb-4">Kirim Pesan</h3>
+              <form>
+                <div class="grid grid-cols-1 gap-4">
+                  <div>
+                    <label for="name" class="block text-gray-700 mb-1"
+                      >Nama Lengkap</label
+                    >
+                    <input
+                      type="text"
+                      id="name"
+                      class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-primary"
+                    />
+                  </div>
+                  <div>
+                    <label for="email" class="block text-gray-700 mb-1"
+                      >Email</label
+                    >
+                    <input
+                      type="email"
+                      id="email"
+                      class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-primary"
+                    />
+                  </div>
+                  <div>
+                    <label for="phone" class="block text-gray-700 mb-1"
+                      >Nomor Telepon</label
+                    >
+                    <input
+                      type="tel"
+                      id="phone"
+                      class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-primary"
+                    />
+                  </div>
+                  <div>
+                    <label for="subject" class="block text-gray-700 mb-1"
+                      >Subjek</label
+                    >
+                    <select
+                      id="subject"
+                      class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-primary"
+                    >
+                      <option value="">Pilih Subjek</option>
+                      <option value="ppdb">PPDB/Pendaftaran</option>
+                      <option value="informasi">Informasi Umum</option>
+                      <option value="kerjasama">Kerjasama</option>
+                      <option value="lainnya">Lainnya</option>
+                    </select>
+                  </div>
+                  <div>
+                    <label for="message" class="block text-gray-700 mb-1"
+                      >Pesan</label
+                    >
+                    <textarea
+                      id="message"
+                      rows="4"
+                      class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-primary"
+                    ></textarea>
+                  </div>
+                  <div>
+                    <button
+                      type="submit"
+                      class="bg-primary text-white px-6 py-3 rounded-lg font-medium hover:bg-blue-700 transition w-full"
+                    >
+                      Kirim Pesan
+                    </button>
+                  </div>
+                </div>
+              </form>
+            </div>
+
+            <div class="mt-6 h-64 rounded-lg overflow-hidden">
+              <iframe
+                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3989.3476997044446!2d103.61889641475739!3d-4.566823996654502!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2e38c510e48e8e8d%3A0x6c9d52d5c3e4f6f9!2sSMPN%2%20Kaur!5e0!3m2!1sen!2sid!4v1627283830265!5m2!1sen!2sid"
+                width="100%"
+                height="100%"
+                style="border: 0"
+                allowfullscreen=""
+                loading="lazy"
+              ></iframe>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-gray-900 text-white py-12">
+      <div class="container mx-auto px-4">
+        <div class="grid md:grid-cols-4 gap-8 mb-8">
+          <div>
+            <h3 class="text-xl font-bold mb-4">Tentang Kami</h3>
+            <p class="text-gray-400">
+              SMP Negeri XX Kaur adalah sekolah unggulan di Kabupaten Kaur yang
+              berkomitmen untuk memberikan pendidikan berkualitas dan membentuk
+              generasi cerdas berkarakter.
+            </p>
+          </div>
+
+          <div>
+            <h3 class="text-xl font-bold mb-4">Tautan Cepat</h3>
+            <ul class="space-y-2">
+              <li>
+                <a href="#" class="text-gray-400 hover:text-white">Beranda</a>
+              </li>
+              <li>
+                <a href="#" class="text-gray-400 hover:text-white"
+                  >Profil Sekolah</a
+                >
+              </li>
+              <li>
+                <a href="#" class="text-gray-400 hover:text-white"
+                  >Guru & Staff</a
+                >
+              </li>
+              <li>
+                <a href="#" class="text-gray-400 hover:text-white">Kurikulum</a>
+              </li>
+              <li>
+                <a href="#" class="text-gray-400 hover:text-white">PPDB</a>
+              </li>
+            </ul>
+          </div>
+
+          <div>
+            <h3 class="text-xl font-bold mb-4">Kontak</h3>
+            <address class="not-italic space-y-2">
+              <p class="text-gray-400">Jl. Pendidikan No., Kaur Selatan</p>
+              <p class="text-gray-400">Kabupaten Kaur, Bengkulu 38963</p>
+              <p class="text-gray-400">Email: info@smpnkaur.sch.id</p>
+              <p class="text-gray-400">Telp: (0739) 1234567</p>
+            </address>
+          </div>
+
+          <div>
+            <h3 class="text-xl font-bold mb-4">Newsletter</h3>
+            <p class="text-gray-400 mb-4">
+              Dapatkan informasi terbaru tentang kegiatan sekolah langsung ke
+              email Anda.
+            </p>
+            <div class="flex">
+              <input
+                type="email"
+                placeholder="Alamat email"
+                class="px-4 py-2 rounded-l-lg w-full bg-gray-800 text-white focus:outline-none"
+              />
+              <button
+                class="bg-primary px-4 py-2 rounded-r-lg hover:bg-blue-700 transition"
+              >
+                <i class="fas fa-paper-plane"></i>
+              </button>
+            </div>
+          </div>
+        </div>
+
+        <div class="pt-6 border-t border-gray-800 text-center text-gray-400">
+          <p class="text-gray-500 text-xs mt-3">
+            © 2023 SMPN 22 Kaur. Seluruh hak cipta dilindungi.
+          </p>
+        </div>
+      </div>
+    </footer>
+
+    <!-- JavaScript -->
+    <script>
+      // Mobile menu toggle
+      document
+        .querySelector("header button")
+        .addEventListener("click", function () {
+          const menu = document.getElementById("mobile-menu");
+          menu.classList.toggle("hidden");
+        });
+
+      // Zoom Galeri
+      document.addEventListener("DOMContentLoaded", function () {
+        const modal = document.getElementById("imageModal");
+        const modalImg = document.getElementById("modalImg");
+        const closeModal = document.getElementById("closeModal");
+
+        // Tangkap semua gambar di galeri
+        document.querySelectorAll("#galeri img").forEach((img) => {
+          img.addEventListener("click", function () {
+            modal.classList.remove("hidden");
+            modal.classList.add("flex");
+            modalImg.src = this.src;
+            modalImg.alt = this.alt;
+          });
+        });
+
+        // Tutup modal kalau klik X atau area luar gambar
+        closeModal.addEventListener("click", () => {
+          modal.classList.add("hidden");
+          modal.classList.remove("flex");
+        });
+
+        modal.addEventListener("click", (e) => {
+          if (e.target === modal) {
+            modal.classList.add("hidden");
+            modal.classList.remove("flex");
+          }
+        });
+      });
+      // Smooth scrolling for anchor links
+      document.querySelectorAll('a[href^="#"]').forEach((anchor) => {
+        anchor.addEventListener("click", function (e) {
+          e.preventDefault();
+
+          const targetId = this.getAttribute("href");
+          if (targetId === "#") return;
+
+          const targetElement = document.querySelector(targetId);
+          if (targetElement) {
+            window.scrollTo({
+              top: targetElement.offsetTop - 80,
+              behavior: "smooth",
+            });
+
+            // Close mobile menu if open
+            const mobileMenu = document.getElementById("mobile-menu");
+            if (!mobileMenu.classList.contains("hidden")) {
+              mobileMenu.classList.add("hidden");
+            }
+          }
+        });
+      });
+
+      // Sticky header effect
+      window.addEventListener("scroll", function () {
+        const header = document.querySelector("header");
+        if (window.scrollY > 100) {
+          header.classList.add("shadow-lg");
+        } else {
+          header.classList.remove("shadow-lg");
+        }
+      });
+
+      // Form submission
+      const contactForm = document.querySelector("#kontak form");
+      if (contactForm) {
+        contactForm.addEventListener("submit", function (e) {
+          e.preventDefault();
+          alert(
+            "Pesan Anda telah terkirim. Kami akan segera menghubungi Anda kembali."
+          );
+          this.reset();
+        });
+      }
+    </script>
+  </body>
+</html>
